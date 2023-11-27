@@ -15,7 +15,6 @@ return {
         find_files = {
           dotfiles = true,
           hidden = true,
-          theme = 'ivy'
         },
         diagnostics = {
           theme = "dropdown",
