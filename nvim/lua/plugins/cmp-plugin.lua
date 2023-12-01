@@ -23,7 +23,7 @@ return {
 		cmp.setup({
 			formatting = {
 				format = lspkind.cmp_format({
-					with_text = true, -- do not show text alongside icons
+					with_text = false, -- do not show text alongside icons
 					maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 
 					-- The function below will be called before any actual modifications from lspkind
@@ -33,7 +33,16 @@ return {
 					end,
 				}),
 			},
-
+			window = {
+				completion = {
+					border = { '┌', '─', '┐', '│', '┘', '─', '└', '│' },
+					winhighlight = 'Normal:CmpPmenu,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
+				},
+				documentation = {
+					border = { '┌', '─', '┐', '│', '┘', '─', '└', '│' },
+					winhighlight = 'Normal:CmpPmenu,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
+				},
+			},
 			snippet = {
 				expand = function(args)
 					require("luasnip").lsp_expand(args.body)
