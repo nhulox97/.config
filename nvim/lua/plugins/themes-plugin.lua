@@ -6,12 +6,12 @@ return {
   },
   {
     "bluz71/vim-nightfly-colors",
-    priority = 1000,
+    event = "VeryLazy",
   },
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    event = "VeryLazy",
+    priority = 1000,
   },
   {
     "nxvu699134/vn-night.nvim",
