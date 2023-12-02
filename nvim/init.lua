@@ -3,6 +3,8 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 vim.opt.termguicolors = true
+vim.opt.background = "dark" -- colorschemes that can be light or dark will be made dark
+vim.opt.signcolumn = "yes"  -- show sign column so that text doesn't shift
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
