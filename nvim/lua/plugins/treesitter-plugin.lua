@@ -2,22 +2,38 @@ return {
   'nvim-treesitter/nvim-treesitter',
   lazy = true,
   config = function()
-    require("nvim-treesitter.configs").setup({
-      --> parsers <--
+    local status, ts = pcall(require, "nvim-treesitter.configs")
+    if (not status) then return end
+
+    ts.setup {
+      indent = {
+        enable = true,
+        disable = {},
+      },
       ensure_installed = {
-        "bash",
+        "tsx",
+        "toml",
         "fish",
+        "json",
+        "yaml",
+        "css",
+        "html",
         "javascript",
         "lua",
         "typescript",
+        "markdown",
+        "svelte",
+        "vue",
+      },
+      autotag = {
+        enable = true,
+        disable = {},
       },
       sync_install = false,
       highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
-      },
-      indent = {
-        enable = true,
+        disable = {},
       },
       --> textobjects selection <--
       textobjects = {
@@ -102,6 +118,9 @@ return {
         enable = false,
         enable_autocmd = false,
       },
-    })
+    }
+
+    local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+    parser_config.tsx.filetype_to_parsername = { "javascript.jsx", "typescript.tsx" }
   end
 }
