@@ -22,17 +22,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 
-require("nvim-web-devicons").setup({
-  strict = true,
-  override_by_extension = {
-    astro = {
-      icon = "",
-      color = "#EF8547",
-      name = "astro",
-    },
-  },
-})
-
 require("confs.keymaps.lsp")
 require("confs.keymaps.editor")
 require("confs.keymaps.tree")
@@ -40,4 +29,3 @@ require("confs.keymaps.utils")
 require("confs.lsp")
 require("confs.globals")
 require("confs.code-folding")
-require("confs.syntax")

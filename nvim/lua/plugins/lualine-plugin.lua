@@ -1,67 +1,4 @@
--- local function config_a()
---   require("lualine").setup({
---     options = {
---       icons_enabled = true,
---       theme = 'ayu_dark', -- auto | horizon | gruvbox_dark | molokai | iceberg_dark | wombat | modus-vivendi | material
---       component_separators = { left = '|', right = '|' },
---       -- section_separators = { left = '', right = '' },
---       disabled_filetypes = {
---         statusline = {},
---         winbar = {},
---       },
---       ignore_focus = {},
---       always_divide_middle = true,
---       globalstatus = true,
---       refresh = {
---         statusline = 1000,
---         tabline = 1000,
---         winbar = 1000,
---       }
---     },
---     sections = {
---       lualine_a = {
---         { "fancy_mode", width = 8 }
---       },
---       lualine_b = {
---         { "fancy_branch" },
---         { "fancy_diff" },
---       },
---       lualine_c = {
---         { 'filename' }
---       },
---       lualine_x = {
---         { "fancy_macro" },
---         { "fancy_diagnostics" },
---         { "fancy_searchcount" },
---         { "fancy_location" },
---       },
---       lualine_y = {
---         { "fancy_filetype" }
---       },
---       lualine_z = {
---         { "fancy_lsp_servers" }
---       },
---     },
---     inactive_sections = {
---       lualine_a = {},
---       lualine_b = {},
---       lualine_c = { 'filename' },
---       lualine_x = { 'location' },
---       lualine_y = {},
---       lualine_z = {}
---     },
---     tabline = {},
---     winbar = {},
---     inactive_winbar = {},
---     extensions = {},
---     disabled_filetypes = {
---       'neo-tree',
---       'NvimTree',
---     }
---   })
--- end
-
-local function config_b()
+local function config_custom(colors)
   -- Eviline config for lualine
   -- Author: shadmansaleh
   -- Credit: glepnir
@@ -69,23 +6,6 @@ local function config_b()
 
   -- Color table for highlights
   -- stylua: ignore
-  local colors = {
-    bg       = '#17191c',
-    bg1      = '#202328',
-    bg2      = '#22252a',
-    bg3      = '#2d3239',
-    fg       = '#bbc2cf',
-    yellow   = '#ECBE7B',
-    cyan     = '#008080',
-    darkblue = '#081633',
-    green    = '#98be65',
-    orange   = '#FF8800',
-    violet   = '#a9a1e1',
-    magenta  = '#c678dd',
-    blue     = '#51afef',
-    red      = '#ec5f67',
-    peanut   = "#f6d5a4",
-  }
 
   local conditions = {
     buffer_not_empty = function()
@@ -207,11 +127,18 @@ local function config_b()
     'filesize',
     color = { fg = colors.blue, bg = colors.bg2 },
     cond = conditions.buffer_not_empty,
+    icon = "󰒋"
   }
 
-  ins_left { 'location', color = { fg = colors.fg, gui = 'italic', bg = colors.bg2 } }
+  ins_left {
+    'location', color = { fg = colors.fg, gui = 'italic', bg = colors.bg2 },
+    icon = ""
+  }
 
-  ins_left { 'progress', color = { fg = colors.fg, gui = 'italic', bg = colors.bg2 } }
+  ins_left {
+    'progress', color = { fg = colors.fg, gui = 'italic', bg = colors.bg2 },
+    -- icon = "󰔟"
+  }
 
   ins_left {
     'filename',
@@ -323,6 +250,62 @@ return {
   },
   lazy = false,
   config = function()
-    config_b()
+    local colors = {
+      bg       = '#17191c',
+      bg1      = '#202328',
+      bg2      = '#22252a',
+      bg3      = '#2d3239',
+      fg       = '#bbc2cf',
+      yellow   = '#ECBE7B',
+      cyan     = '#008080',
+      darkblue = '#081633',
+      green    = '#98be65',
+      orange   = '#FF8800',
+      violet   = '#a9a1e1',
+      magenta  = '#c678dd',
+      blue     = '#51afef',
+      red      = '#ec5f67',
+      peanut   = "#f6d5a4",
+    }
+
+    local colors_nightfly = {
+      bg       = '#011627',
+      bg1      = '#011627',
+      bg2      = '#021F37',
+      bg3      = '#032847',
+      fg       = '#bdc1c6',
+      yellow   = '#F5DC77',
+      cyan     = '#7fdbca',
+      darkblue = '#1d3b53',
+      green    = '#a1cd5e',
+      orange   = '#E58027',
+      violet   = '#c792ea',
+      magenta  = '#ae81ff',
+      blue     = '#82aaff',
+      red      = '#fc514e',
+      peanut   = "#F9D099",
+    }
+
+    local colors_grubvox = {
+      bg       = '#282828',
+      bg1      = '#282828',
+      bg2      = '#3c3836',
+      bg3      = '#504945',
+      fg       = '#ebdbb2',
+      yellow   = '#fabd2f',
+      cyan     = '#8ec07c',
+      darkblue = '#1A5764',
+      green    = '#b8bb26',
+      orange   = '#fe8019',
+      violet   = '#d3869b',
+      magenta  = '#b16286',
+      blue     = '#53ACB0',
+      red      = '#fb4934',
+      -- red      = '#cc241d',
+      peanut   = "#F8BE4E",
+
+    }
+
+    config_custom(colors_grubvox)
   end
 }
