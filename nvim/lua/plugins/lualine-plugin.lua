@@ -245,67 +245,86 @@ return {
   dependencies = {
     {
       'nvim-tree/nvim-web-devicons',
-      -- 'meuter/lualine-so-fancy.nvim'
+      { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
     },
   },
   lazy = false,
   config = function()
-    local colors = {
-      bg       = '#17191c',
-      bg1      = '#202328',
-      bg2      = '#22252a',
-      bg3      = '#2d3239',
-      fg       = '#bbc2cf',
-      yellow   = '#ECBE7B',
-      cyan     = '#008080',
-      darkblue = '#081633',
-      green    = '#98be65',
-      orange   = '#FF8800',
-      violet   = '#a9a1e1',
-      magenta  = '#c678dd',
-      blue     = '#51afef',
-      red      = '#ec5f67',
-      peanut   = "#f6d5a4",
+    -- local colors = {
+    --   bg       = '#17191c',
+    --   bg1      = '#202328',
+    --   bg2      = '#22252a',
+    --   bg3      = '#2d3239',
+    --   fg       = '#bbc2cf',
+    --   yellow   = '#ECBE7B',
+    --   cyan     = '#008080',
+    --   darkblue = '#081633',
+    --   green    = '#98be65',
+    --   orange   = '#FF8800',
+    --   violet   = '#a9a1e1',
+    --   magenta  = '#c678dd',
+    --   blue     = '#51afef',
+    --   red      = '#ec5f67',
+    --   peanut   = "#f6d5a4",
+    -- }
+
+    local catppuccin_theme = require("catppuccin.palettes").get_palette "mocha"
+
+    local colors_catppucin = {
+      bg       = catppuccin_theme.crust,
+      bg1      = catppuccin_theme.mantle,
+      bg2      = catppuccin_theme.base,
+      bg3      = catppuccin_theme.surface0,
+      fg       = catppuccin_theme.text,
+      yellow   = catppuccin_theme.yellow,
+      cyan     = catppuccin_theme.teal,
+      darkblue = catppuccin_theme.base,
+      green    = catppuccin_theme.green,
+      orange   = catppuccin_theme.peach,
+      violet   = catppuccin_theme.lavender,
+      magenta  = catppuccin_theme.mauve,
+      blue     = catppuccin_theme.blue,
+      red      = catppuccin_theme.red,
+      peanut   = catppuccin_theme.rosewater,
     }
 
-    local colors_nightfly = {
-      bg       = '#011627',
-      bg1      = '#011627',
-      bg2      = '#021F37',
-      bg3      = '#032847',
-      fg       = '#bdc1c6',
-      yellow   = '#F5DC77',
-      cyan     = '#7fdbca',
-      darkblue = '#1d3b53',
-      green    = '#a1cd5e',
-      orange   = '#E58027',
-      violet   = '#c792ea',
-      magenta  = '#ae81ff',
-      blue     = '#82aaff',
-      red      = '#fc514e',
-      peanut   = "#F9D099",
-    }
+    -- local colors_nightfly = {
+    --   bg       = '#011627',
+    --   bg1      = '#011627',
+    --   bg2      = '#021F37',
+    --   bg3      = '#032847',
+    --   fg       = '#bdc1c6',
+    --   yellow   = '#F5DC77',
+    --   cyan     = '#7fdbca',
+    --   darkblue = '#1d3b53',
+    --   green    = '#a1cd5e',
+    --   orange   = '#E58027',
+    --   violet   = '#c792ea',
+    --   magenta  = '#ae81ff',
+    --   blue     = '#82aaff',
+    --   red      = '#fc514e',
+    --   peanut   = "#F9D099",
+    -- }
+    --
+    -- local colors_grubvox = {
+    --   bg       = '#282828',
+    --   bg1      = '#282828',
+    --   bg2      = '#3c3836',
+    --   bg3      = '#504945',
+    --   fg       = '#ebdbb2',
+    --   yellow   = '#fabd2f',
+    --   cyan     = '#8ec07c',
+    --   darkblue = '#1A5764',
+    --   green    = '#b8bb26',
+    --   orange   = '#fe8019',
+    --   violet   = '#d3869b',
+    --   magenta  = '#b16286',
+    --   blue     = '#53ACB0',
+    --   red      = '#fb4934',
+    --   -- red      = '#cc241d',
+    --   peanut   = "#F8BE4E",
+    -- }
 
-    local colors_grubvox = {
-      bg       = '#282828',
-      bg1      = '#282828',
-      bg2      = '#3c3836',
-      bg3      = '#504945',
-      fg       = '#ebdbb2',
-      yellow   = '#fabd2f',
-      cyan     = '#8ec07c',
-      darkblue = '#1A5764',
-      green    = '#b8bb26',
-      orange   = '#fe8019',
-      violet   = '#d3869b',
-      magenta  = '#b16286',
-      blue     = '#53ACB0',
-      red      = '#fb4934',
-      -- red      = '#cc241d',
-      peanut   = "#F8BE4E",
-
-    }
-
-    config_custom(colors_grubvox)
+    config_custom(colors_catppucin)
   end
 }
