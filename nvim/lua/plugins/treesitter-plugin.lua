@@ -22,8 +22,7 @@ return {
         "lua",
         "typescript",
         "markdown",
-        "svelte",
-        "vue",
+        "astro",
       },
       autotag = {
         enable = true,
