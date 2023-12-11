@@ -14,12 +14,12 @@ return {
 		"hrsh7th/cmp-cmdline",
 		"saadparwaiz1/cmp_luasnip",
 		{
-	"L3MON4D3/LuaSnip",
-	-- follow latest release.
-	version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-	-- install jsregexp (optional!).
-	build = "make install_jsregexp"
-},
+			"L3MON4D3/LuaSnip",
+			-- follow latest release.
+			version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+			-- install jsregexp (optional!).
+			build = "make install_jsregexp"
+		},
 	},
 	config = function()
 		local luasnip = require("luasnip")
@@ -31,7 +31,6 @@ return {
 				format = lspkind.cmp_format({
 					with_text = false, -- do not show text alongside icons
 					maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-
 					-- The function below will be called before any actual modifications from lspkind
 					-- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
 					before = function(_, vim_item)
@@ -88,6 +87,7 @@ return {
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "neorg" },
+				-- { name = "codeium" }
 			},
 		})
 	end
