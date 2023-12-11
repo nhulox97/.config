@@ -3,7 +3,21 @@ return {
   version = "*",
   lazy = false,
   dependencies = {
-    "nvim-tree/nvim-web-devicons",
+    {
+      'nvim-tree/nvim-web-devicons',
+      config = {
+        require("nvim-web-devicons").setup({
+          strict = true,
+          override_by_extension = {
+            astro = {
+              icon = "",
+              color = "#EF8547",
+              name = "astro",
+            },
+          },
+        })
+      }
+    },
   },
   config = function()
     require("nvim-tree").setup {

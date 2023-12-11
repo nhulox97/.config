@@ -29,3 +29,10 @@ require("confs.keymaps.utils")
 require("confs.lsp")
 require("confs.globals")
 require("confs.code-folding")
+
+vim.filetype.add({
+  extension = {
+    mdx = "mdx",
+  },
+})
+vim.treesitter.language.register("markdown", "mdx")

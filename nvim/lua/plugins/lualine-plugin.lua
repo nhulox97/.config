@@ -244,7 +244,21 @@ return {
   'nvim-lualine/lualine.nvim',
   dependencies = {
     {
-      'nvim-tree/nvim-web-devicons',
+      {
+        'nvim-tree/nvim-web-devicons',
+        config = {
+          require("nvim-web-devicons").setup({
+            strict = true,
+            override_by_extension = {
+              astro = {
+                icon = "",
+                color = "#EF8547",
+                name = "astro",
+              },
+            },
+          })
+        }
+      },
       { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
     },
   },

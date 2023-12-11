@@ -54,10 +54,11 @@ require("lspconfig")["golangci_lint_ls"].setup({
   capabilities = capabilities,
 })
 
-require("lspconfig")["tailwindcss"].setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
+-- require("lspconfig")["tailwindcss"].setup({
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   filetypes = { "css", "jsx", "tsx" }
+-- })
 
 require("lspconfig")["docker_compose_language_service"].setup({
   on_attach = on_attach,
@@ -72,6 +73,7 @@ require("lspconfig")["eslint"].setup({
 require("lspconfig")["astro"].setup({
   on_attach = on_attach,
   capabilities = capabilities,
+  filetypes = { "astro" },
 })
 
 require("lspconfig")["cssls"].setup({
