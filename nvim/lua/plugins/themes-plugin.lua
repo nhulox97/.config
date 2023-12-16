@@ -2,7 +2,7 @@ return {
   {
     'folke/tokyonight.nvim',
     config = true,
-    event = "VeryLazy"
+    priority = 1000,
   },
   {
     "bluz71/vim-nightfly-colors",
@@ -11,7 +11,7 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    priority = 1000,
+    event = "VeryLazy"
   },
   {
     "nxvu699134/vn-night.nvim",

@@ -27,6 +27,7 @@ return {
         sh = formatters.shfmt,
         terraform = formatters.lsp,
         typescript = formatters.prettierd,
+        astro = formatters.lsp,
         typescriptreact = formatters.prettierd,
         yaml = formatters.lsp,
       }
