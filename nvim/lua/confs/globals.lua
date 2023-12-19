@@ -19,7 +19,7 @@ vim.cmd([[
   set nocompatible
   filetype plugin indent on
   syntax on
-  colorscheme tokyonight-moon
+  colorscheme catppuccin
 ]])
 vim.opt.cc = '100'                -- vim.opt.an 100 column border for good coding style
 vim.opt.mouse = 'a'               -- enable mouse click
