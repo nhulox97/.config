@@ -20,6 +20,19 @@ return {
 				end,
 				bg = 'NONE'
 			},
+			sidebar = {
+				filetype = { 'NvimTree', 'neo-tree' },
+				components = {
+					{
+						text = function(buf)
+							return buf.filetype
+						end,
+						fg = yellow,
+						bg = function() return get_hex('NvimTreeNormal', 'bg') end,
+						bold = true,
+					},
+				}
+			},
 			components = {
 				{
 					text = function(buffer) return (buffer.index ~= 1) and '▏' or '' end,
