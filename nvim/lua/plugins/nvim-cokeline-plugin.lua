@@ -39,11 +39,16 @@ return {
 					fg = function() return get_hex('Normal', 'fg') end
 				},
 				{
+					text = function(buffer)
+						return '[' .. buffer.index .. ']'
+					end,
+				},
+				{
 					text = function(buffer) return ' ' .. buffer.devicon.icon end,
 					fg = function(buffer) return buffer.devicon.color end,
 				},
 				{
-					text = function(buffer) return buffer.filename .. ' ' end,
+					text = function(buffer) return buffer.unique_prefix .. buffer.filename .. ' ' end,
 					bold = function(buffer) return buffer.is_focused end
 				},
 				{
