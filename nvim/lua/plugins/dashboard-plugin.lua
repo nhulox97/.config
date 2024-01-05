@@ -20,6 +20,14 @@ return {
             action = 'Telescope find_files',
             key = 'f',
           },
+          {
+            icon = '󰙅 ',
+            icon_hl = '@variable',
+            desc = 'Tree',
+            group = 'Label',
+            action = 'NvimTreeOpen',
+            key = 't',
+          },
         },
       },
     }
