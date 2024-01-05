@@ -85,12 +85,12 @@ return {
             key = 'u',
             action = 'Lazy update'
           },
-          {
-            icon = '󰓅 \t',
-            desc = 'Lazy profile              ',
-            key = 'p',
-            action = 'Lazy profile'
-          },
+          -- {
+          --   icon = '󰓅 \t',
+          --   desc = 'Lazy profile              ',
+          --   key = 'p',
+          --   action = 'Lazy profile'
+          -- },
           {
             icon = ' \t',
             desc = 'Find files           ',
@@ -103,30 +103,30 @@ return {
             key = 'g',
             action = 'Telescope live_grep'
           },
-          {
-            icon = '󱏒 \t',
-            desc = 'Open tree             ',
-            key = 't',
-            action = 'NvimTreeOpen'
-          },
+          -- {
+          --   icon = '󱏒 \t',
+          --   desc = 'Open tree             ',
+          --   key = 't',
+          --   action = 'NvimTreeOpen'
+          -- },
           {
             icon = ' \t',
             desc = 'Neogit              ',
             key = 'n',
             action = 'Neogit'
           },
-          {
-            icon = ' \t',
-            desc = 'Find changes',
-            key = 'd',
-            action = 'Telescope git_status'
-          },
-          {
-            icon = ' \t',
-            desc = 'Find branches',
-            key = 'b',
-            action = 'Telescope git_branches'
-          },
+          -- {
+          --   icon = ' \t',
+          --   desc = 'Find changes',
+          --   key = 'd',
+          --   action = 'Telescope git_status'
+          -- },
+          -- {
+          --   icon = ' \t',
+          --   desc = 'Find branches',
+          --   key = 'b',
+          --   action = 'Telescope git_branches'
+          -- },
           {
             icon = ' \t',
             desc = "Change color             ",
