@@ -19,8 +19,11 @@ vim.cmd([[
   set nocompatible
   filetype plugin indent on
   syntax on
-  colorscheme catppuccin
 ]])
+-- vim.cmd('colorscheme nightfox')
+vim.cmd('colorscheme rose-pine')
+-- colorscheme catppuccin
+-- colorscheme tokyodark
 vim.opt.cc = '100'                -- vim.opt.an 100 column border for good coding style
 vim.opt.mouse = 'a'               -- enable mouse click
 vim.opt.clipboard = 'unnamedplus' -- using system clipboard
