@@ -14,14 +14,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "nxvu699134/vn-night.nvim",
-    event = "VeryLazy",
-  },
-  {
-    'olimorris/onedarkpro.nvim',
-    event = "VeryLazy",
-  },
-  {
     "tiagovla/tokyodark.nvim",
     event = "VeryLazy",
     opts = {
@@ -32,12 +24,20 @@ return {
     end,
   },
   {
-    "EdenEast/nightfox.nvim",
+    'Mofiqul/dracula.nvim',
+    event = "VeryLazy",
+  },
+  {
+    'luisiacc/gruvbox-baby',
     event = "VeryLazy",
   },
   {
     'rose-pine/neovim',
     name = 'rose-pine',
     priority = 1000,
+  },
+  {
+    'projekt0n/github-nvim-theme',
+    event = "VeryLazy"
   }
 }
