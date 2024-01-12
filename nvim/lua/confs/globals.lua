@@ -21,11 +21,11 @@ vim.cmd([[
   syntax on
 ]])
 -- vim.cmd('colorscheme nightfox')
-vim.cmd('colorscheme rose-pine')
--- colorscheme catppuccin
+-- vim.cmd('colorscheme rose-pine')
+vim.cmd('colorscheme catppuccin')
 -- colorscheme tokyodark
 vim.opt.cc = '100'                -- vim.opt.an 100 column border for good coding style
-vim.opt.mouse = 'a'               -- enable mouse click
+vim.opt.mouse = ''                -- enable mouse click
 vim.opt.clipboard = 'unnamedplus' -- using system clipboard
 vim.opt.cursorline = true         -- highlight current cursorline
 
