@@ -125,25 +125,25 @@ local function config_custom(colors)
   ins_left {
     -- filesize component
     'filesize',
-    color = { fg = colors.blue, bg = colors.bg2 },
+    color = { fg = colors.magenta, bg = colors.bg2 },
     cond = conditions.buffer_not_empty,
     icon = "󰒋"
   }
 
   ins_left {
-    'location', color = { fg = colors.fg, gui = 'italic', bg = colors.bg2 },
+    'location', color = { fg = colors.orange, bg = colors.bg2 },
     icon = ""
   }
 
   ins_left {
-    'progress', color = { fg = colors.fg, gui = 'italic', bg = colors.bg2 },
+    'progress', color = { fg = colors.orange, bg = colors.bg2 },
     -- icon = "󰔟"
   }
 
   ins_left {
     'filename',
     cond = conditions.buffer_not_empty,
-    color = { fg = colors.orange, gui = 'bold,italic', bg = colors.bg1 },
+    color = { fg = colors.cyan, gui = 'bold', bg = colors.bg1 },
   }
 
   ins_left {
@@ -151,9 +151,9 @@ local function config_custom(colors)
     sources = { 'nvim_diagnostic' },
     symbols = { error = ' ', warn = ' ', info = ' ' },
     diagnostics_color = {
-      color_error = { fg = colors.red, gui = "bold,italic", bg = colors.bg1 },
-      color_warn = { fg = colors.yellow, gui = "bold,italic", bg = colors.bg1 },
-      color_info = { fg = colors.cyan, gui = "italic", bg = colors.bg1 },
+      color_error = { fg = colors.red, gui = "bold", bg = colors.bg1 },
+      color_warn = { fg = colors.yellow, gui = "bold", bg = colors.bg1 },
+      color_info = { fg = colors.blue, gui = "bold", bg = colors.bg1 },
     },
   }
 
@@ -184,7 +184,7 @@ local function config_custom(colors)
     end,
     -- icon = ' LSP:',
     icon = '󰌘 lsp:',
-    color = { fg = colors.peanut, gui = 'bold,italic' },
+    color = { fg = colors.peanut, gui = 'bold' },
   }
 
   -- Add components to right sections
@@ -204,28 +204,28 @@ local function config_custom(colors)
     'branch',
     icons_enabled = true,
     icon = '',
-    color = { gui = 'bold,italic', fg = colors.red, bg = colors.bg1 },
+    color = { gui = 'bold', fg = colors.blue, bg = colors.bg1 },
   }
 
   ins_right {
     'filetype',
     fmt = string.lower,
     icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
-    color = { gui = 'bold,italic', bg = colors.bg2 },
+    color = { gui = 'bold', bg = colors.bg2 },
   }
 
   ins_right {
     'o:encoding',       -- option component same as &encoding in viml
     fmt = string.lower, -- I'm not sure why it's upper case either ;)
     cond = conditions.hide_in_width,
-    color = { fg = colors.cyan, gui = 'italic', bg = colors.bg3 },
+    color = { fg = colors.cyan, gui = 'bold', bg = colors.bg3 },
   }
 
   ins_right {
     'fileformat',
     fmt = string.upper,
     icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
-    color = { fg = colors.cyan, gui = 'bold,italic', bg = colors.bg3 },
+    color = { fg = colors.cyan, gui = 'bold', bg = colors.bg3 },
   }
 
   ins_right {
