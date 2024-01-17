@@ -183,7 +183,7 @@ local function config_custom(colors)
       return msg
     end,
     -- icon = ' LSP:',
-    icon = '󰌘 lsp:',
+    icon = '󰌘',
     color = { fg = colors.peanut, gui = 'bold' },
   }
 
@@ -258,12 +258,12 @@ return {
             },
           })
         }
-      },
-      { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
+      }
     },
   },
   lazy = false,
   config = function()
+    -- INFO: default
     -- local colors = {
     --   bg       = '#17191c',
     --   bg1      = '#202328',
@@ -282,9 +282,10 @@ return {
     --   peanut   = "#f6d5a4",
     -- }
 
-    local catppuccin_theme = require("catppuccin.palettes").get_palette "mocha"
+    -- INFO: catppuccin
 
-    local colors_catppucin = {
+    local catppuccin_theme = require("catppuccin.palettes").get_palette "mocha"
+    local colors = {
       bg       = catppuccin_theme.crust,
       bg1      = catppuccin_theme.mantle,
       bg2      = catppuccin_theme.base,
@@ -302,7 +303,8 @@ return {
       peanut   = catppuccin_theme.rosewater,
     }
 
-    -- local colors_nightfly = {
+    -- INFO: nightfly
+    -- local colors = {
     --   bg       = '#011627',
     --   bg1      = '#011627',
     --   bg2      = '#021F37',
@@ -319,8 +321,9 @@ return {
     --   red      = '#fc514e',
     --   peanut   = "#F9D099",
     -- }
-    --
-    -- local colors_grubvox = {
+
+    -- INFO: grubvox
+    -- local colors = {
     --   bg       = '#282828',
     --   bg1      = '#282828',
     --   bg2      = '#3c3836',
@@ -339,6 +342,6 @@ return {
     --   peanut   = "#F8BE4E",
     -- }
 
-    config_custom(colors_catppucin)
+    config_custom(colors)
   end
 }
