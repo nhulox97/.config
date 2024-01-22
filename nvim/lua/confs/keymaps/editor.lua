@@ -1,10 +1,11 @@
 local opts = { noremap = true, silent = true }
 
 vim.keymap.set("n", "<leader>ff", ":lua require('telescope.builtin').find_files()<CR>", opts)
-vim.keymap.set("n", "<leader>fg", ":lua require('telescope.builtin').live_grep()<CR>", opts)
 vim.keymap.set("n", "<leader>fb", ":lua require('telescope.builtin').buffers()<CR>", opts)
-vim.keymap.set("n", "<leader>fs", ":lua require('telescope.builtin').git_status()<CR>", opts)
+vim.keymap.set("n", "<leader>fd", ":lua require('telescope.builtin').git_status()<CR>", opts)
+vim.keymap.set("n", "<leader>fg", ":lua require('telescope.builtin').live_grep()<CR>", opts)
 vim.keymap.set("n", "<leader>fh", ":lua require('telescope.builtin').help_tags()<CR>", opts)
+vim.keymap.set("n", "<leader>fs", ":lua require('telescope.builtin').lsp_document_symbols()<CR>", opts)
 
 vim.keymap.set("n", "<leader>gc", ":lua require('telescope.builtin').git_commits()<CR>", opts)
 vim.keymap.set("n", "<leader>gf", ":lua require('telescope.builtin').git_files()<CR>", opts)
