@@ -1,3 +1,4 @@
+---@diagnostic disable: need-check-nil
 local function config_custom(colors)
   -- Eviline config for lualine
   -- Author: shadmansaleh
@@ -284,24 +285,24 @@ return {
 
     -- INFO: catppuccin
 
-    local catppuccin_theme = require("catppuccin.palettes").get_palette "mocha"
-    local colors = {
-      bg       = catppuccin_theme.crust,
-      bg1      = catppuccin_theme.mantle,
-      bg2      = catppuccin_theme.base,
-      bg3      = catppuccin_theme.surface0,
-      fg       = catppuccin_theme.text,
-      yellow   = catppuccin_theme.yellow,
-      cyan     = catppuccin_theme.teal,
-      darkblue = catppuccin_theme.base,
-      green    = catppuccin_theme.green,
-      orange   = catppuccin_theme.peach,
-      violet   = catppuccin_theme.lavender,
-      magenta  = catppuccin_theme.mauve,
-      blue     = catppuccin_theme.blue,
-      red      = catppuccin_theme.red,
-      peanut   = catppuccin_theme.rosewater,
-    }
+    -- local catppuccin_theme = require("catppuccin.palettes").get_palette "mocha"
+    -- local colors = {
+    --   bg       = catppuccin_theme.crust,
+    --   bg1      = catppuccin_theme.mantle,
+    --   bg2      = catppuccin_theme.base,
+    --   bg3      = catppuccin_theme.surface0,
+    --   fg       = catppuccin_theme.text,
+    --   yellow   = catppuccin_theme.yellow,
+    --   cyan     = catppuccin_theme.teal,
+    --   darkblue = catppuccin_theme.base,
+    --   green    = catppuccin_theme.green,
+    --   orange   = catppuccin_theme.peach,
+    --   violet   = catppuccin_theme.lavender,
+    --   magenta  = catppuccin_theme.mauve,
+    --   blue     = catppuccin_theme.blue,
+    --   red      = catppuccin_theme.red,
+    --   peanut   = catppuccin_theme.rosewater,
+    -- }
 
     -- INFO: nightfly
     -- local colors = {
@@ -341,6 +342,27 @@ return {
     --   -- red      = '#cc241d',
     --   peanut   = "#F8BE4E",
     -- }
+
+    --INFO: cyberdream
+    local colors = {
+      bg = "#16181a",
+      bg1 = "#1e2124",
+      bg2 = "#292b30",
+      bg3 = "#3c4048",
+      fg = "#ffffff",
+      grey = "#7b8496",
+      blue = "#5ea1ff",
+      darkblue = "#3e6bab",
+      green = "#5eff6c",
+      cyan = "#5ef1ff",
+      red = "#ff6e5e",
+      yellow = "#f1ff5e",
+      magenta = "#ff5ef1",
+      pink = "#ff5ea0",
+      orange = "#ffbd5e",
+      purple = "#bd5eff",
+    }
+
 
     config_custom(colors)
   end

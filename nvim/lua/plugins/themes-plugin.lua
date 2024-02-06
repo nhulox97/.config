@@ -13,7 +13,8 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    priority = 1000,
+    lazy = true,
+    event = "VeryLazy",
   },
   {
     "tiagovla/tokyodark.nvim",
@@ -41,5 +42,17 @@ return {
     'projekt0n/github-nvim-theme',
     lazy = true,
     event = "VeryLazy"
+  },
+  {
+    "scottmckendry/cyberdream.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("cyberdream").setup({
+        italic_comments = false,
+        hide_fillchars = true,
+        borderless_telescope = true,
+      })
+    end,
   }
 }
