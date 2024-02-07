@@ -6,31 +6,10 @@ return {
     event = "VeryLazy"
   },
   {
-    "bluz71/vim-nightfly-colors",
-    lazy = true,
-    event = "VeryLazy",
-  },
-  {
     "catppuccin/nvim",
     name = "catppuccin",
-    lazy = true,
-    event = "VeryLazy",
-  },
-  {
-    'Mofiqul/dracula.nvim',
-    lazy = true,
-    event = "VeryLazy",
-  },
-  {
-    'rose-pine/neovim',
-    lazy = true,
-    name = 'rose-pine',
-    event = "VeryLazy",
-  },
-  {
-    'projekt0n/github-nvim-theme',
-    lazy = true,
-    event = "VeryLazy"
+    lazy = false,
+    priority = 1000,
   },
   {
     "scottmckendry/cyberdream.nvim",
@@ -46,7 +25,7 @@ return {
   },
   {
     "oxfist/night-owl.nvim",
-    lazy = false,
-    priority = 1000,
+    lazy = true,
+    event = "VeryLazy",
   }
 }

@@ -265,6 +265,7 @@ return {
   lazy = false,
   config = function()
     -- INFO: default
+
     -- local colors = {
     --   bg       = '#17191c',
     --   bg1      = '#202328',
@@ -285,83 +286,86 @@ return {
 
     -- INFO: catppuccin
 
-    -- local catppuccin_theme = require("catppuccin.palettes").get_palette "mocha"
-    -- local colors = {
-    --   bg       = catppuccin_theme.crust,
-    --   bg1      = catppuccin_theme.mantle,
-    --   bg2      = catppuccin_theme.base,
-    --   bg3      = catppuccin_theme.surface0,
-    --   fg       = catppuccin_theme.text,
-    --   yellow   = catppuccin_theme.yellow,
-    --   cyan     = catppuccin_theme.teal,
-    --   darkblue = catppuccin_theme.base,
-    --   green    = catppuccin_theme.green,
-    --   orange   = catppuccin_theme.peach,
-    --   violet   = catppuccin_theme.lavender,
-    --   magenta  = catppuccin_theme.mauve,
-    --   blue     = catppuccin_theme.blue,
-    --   red      = catppuccin_theme.red,
-    --   peanut   = catppuccin_theme.rosewater,
-    -- }
-
-    -- INFO: nightfly
+    local catppuccin_theme = require("catppuccin.palettes").get_palette "mocha"
     local colors = {
-      bg       = '#011627',
-      bg1      = '#011627',
-      bg2      = '#021F37',
-      bg3      = '#032847',
-      fg       = '#bdc1c6',
-      yellow   = '#F5DC77',
-      cyan     = '#7fdbca',
-      darkblue = '#1d3b53',
-      green    = '#a1cd5e',
-      orange   = '#E58027',
-      violet   = '#c792ea',
-      magenta  = '#ae81ff',
-      blue     = '#82aaff',
-      red      = '#fc514e',
-      peanut   = "#F9D099",
+      bg       = catppuccin_theme.crust,
+      bg1      = catppuccin_theme.mantle,
+      bg2      = catppuccin_theme.base,
+      bg3      = catppuccin_theme.surface0,
+      fg       = catppuccin_theme.text,
+      yellow   = catppuccin_theme.yellow,
+      cyan     = catppuccin_theme.teal,
+      darkblue = catppuccin_theme.base,
+      green    = catppuccin_theme.green,
+      orange   = catppuccin_theme.peach,
+      violet   = catppuccin_theme.lavender,
+      magenta  = catppuccin_theme.mauve,
+      blue     = catppuccin_theme.blue,
+      red      = catppuccin_theme.red,
+      peanut   = catppuccin_theme.rosewater,
     }
 
-    -- INFO: grubvox
+    -- INFO: nightfly
+    --
     -- local colors = {
-    --   bg       = '#282828',
-    --   bg1      = '#282828',
-    --   bg2      = '#3c3836',
-    --   bg3      = '#504945',
-    --   fg       = '#ebdbb2',
-    --   yellow   = '#fabd2f',
-    --   cyan     = '#8ec07c',
-    --   darkblue = '#1A5764',
-    --   green    = '#b8bb26',
-    --   orange   = '#fe8019',
-    --   violet   = '#d3869b',
-    --   magenta  = '#b16286',
-    --   blue     = '#53ACB0',
-    --   red      = '#fb4934',
-    --   -- red      = '#cc241d',
-    --   peanut   = "#F8BE4E",
+    --   bg       = '#011627',
+    --   bg1      = '#011627',
+    --   bg2      = '#021F37',
+    --   bg3      = '#032847',
+    --   fg       = '#bdc1c6',
+    --   yellow   = '#F5DC77',
+    --   cyan     = '#7fdbca',
+    --   darkblue = '#1d3b53',
+    --   green    = '#a1cd5e',
+    --   orange   = '#E58027',
+    --   violet   = '#c792ea',
+    --   magenta  = '#ae81ff',
+    --   blue     = '#82aaff',
+    --   red      = '#fc514e',
+    --   peanut   = "#F9D099",
     -- }
 
-    --INFO: cyberdream
-    -- local colors = {
-    --   bg = "#16181a",
-    --   bg1 = "#1e2124",
-    --   bg2 = "#292b30",
-    --   bg3 = "#3c4048",
-    --   fg = "#ffffff",
-    --   grey = "#7b8496",
-    --   blue = "#5ea1ff",
-    --   darkblue = "#3e6bab",
-    --   green = "#5eff6c",
-    --   cyan = "#5ef1ff",
-    --   red = "#ff6e5e",
-    --   yellow = "#f1ff5e",
-    --   magenta = "#ff5ef1",
-    --   pink = "#ff5ea0",
-    --   orange = "#ffbd5e",
-    --   purple = "#bd5eff",
-    -- }
+    -- -- INFO: grubvox
+    --
+    -- -- local colors = {
+    -- --   bg       = '#282828',
+    -- --   bg1      = '#282828',
+    -- --   bg2      = '#3c3836',
+    -- --   bg3      = '#504945',
+    -- --   fg       = '#ebdbb2',
+    -- --   yellow   = '#fabd2f',
+    -- --   cyan     = '#8ec07c',
+    -- --   darkblue = '#1A5764',
+    -- --   green    = '#b8bb26',
+    -- --   orange   = '#fe8019',
+    -- --   violet   = '#d3869b',
+    -- --   magenta  = '#b16286',
+    -- --   blue     = '#53ACB0',
+    -- --   red      = '#fb4934',
+    -- --   -- red      = '#cc241d',
+    -- --   peanut   = "#F8BE4E",
+    -- -- }
+    --
+    -- --INFO: cyberdream
+    --
+    -- -- local colors = {
+    -- --   bg = "#16181a",
+    -- --   bg1 = "#1e2124",
+    -- --   bg2 = "#292b30",
+    -- --   bg3 = "#3c4048",
+    -- --   fg = "#ffffff",
+    -- --   grey = "#7b8496",
+    -- --   blue = "#5ea1ff",
+    -- --   darkblue = "#3e6bab",
+    -- --   green = "#5eff6c",
+    -- --   cyan = "#5ef1ff",
+    -- --   red = "#ff6e5e",
+    -- --   yellow = "#f1ff5e",
+    -- --   magenta = "#ff5ef1",
+    -- --   pink = "#ff5ea0",
+    -- --   orange = "#ffbd5e",
+    -- --   purple = "#bd5eff",
+    -- -- }
 
     config_custom(colors)
   end

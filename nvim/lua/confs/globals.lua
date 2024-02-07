@@ -20,11 +20,9 @@ vim.cmd([[
   filetype plugin indent on
   syntax on
 ]])
--- vim.cmd('colorscheme nightfox')
--- vim.cmd('colorscheme rose-pine')
--- vim.cmd('colorscheme catppuccin')
+vim.cmd('colorscheme catppuccin')
 -- vim.cmd('colorscheme cyberdream')
-vim.cmd('colorscheme night-owl')
+-- vim.cmd('colorscheme night-owl')
 -- colorscheme tokyodark
 vim.opt.cc = '100'                -- vim.opt.an 100 column border for good coding style
 vim.opt.mouse = ''                -- enable mouse click
