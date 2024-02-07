@@ -23,7 +23,8 @@ vim.cmd([[
 -- vim.cmd('colorscheme nightfox')
 -- vim.cmd('colorscheme rose-pine')
 -- vim.cmd('colorscheme catppuccin')
-vim.cmd('colorscheme cyberdream')
+-- vim.cmd('colorscheme cyberdream')
+vim.cmd('colorscheme night-owl')
 -- colorscheme tokyodark
 vim.opt.cc = '100'                -- vim.opt.an 100 column border for good coding style
 vim.opt.mouse = ''                -- enable mouse click
@@ -52,7 +53,7 @@ if vim.fn.has("wsl") == 1 then
       },
       paste = {
         ["+"] = (function()
-          return vim.fn.systemlist('wl-paste --no-newline|sed -e "s/\r$//"', { '' }, 1)      -- '1' keeps empty lines
+          return vim.fn.systemlist('wl-paste --no-newline|sed -e "s/\r$//"', { '' }, 1) -- '1' keeps empty lines
         end),
         ["*"] = (function()
           return vim.fn.systemlist('wl-paste --primary --no-newline|sed -e "s/\r$//"', { '' }, 1)

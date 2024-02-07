@@ -305,23 +305,23 @@ return {
     -- }
 
     -- INFO: nightfly
-    -- local colors = {
-    --   bg       = '#011627',
-    --   bg1      = '#011627',
-    --   bg2      = '#021F37',
-    --   bg3      = '#032847',
-    --   fg       = '#bdc1c6',
-    --   yellow   = '#F5DC77',
-    --   cyan     = '#7fdbca',
-    --   darkblue = '#1d3b53',
-    --   green    = '#a1cd5e',
-    --   orange   = '#E58027',
-    --   violet   = '#c792ea',
-    --   magenta  = '#ae81ff',
-    --   blue     = '#82aaff',
-    --   red      = '#fc514e',
-    --   peanut   = "#F9D099",
-    -- }
+    local colors = {
+      bg       = '#011627',
+      bg1      = '#011627',
+      bg2      = '#021F37',
+      bg3      = '#032847',
+      fg       = '#bdc1c6',
+      yellow   = '#F5DC77',
+      cyan     = '#7fdbca',
+      darkblue = '#1d3b53',
+      green    = '#a1cd5e',
+      orange   = '#E58027',
+      violet   = '#c792ea',
+      magenta  = '#ae81ff',
+      blue     = '#82aaff',
+      red      = '#fc514e',
+      peanut   = "#F9D099",
+    }
 
     -- INFO: grubvox
     -- local colors = {
@@ -344,25 +344,24 @@ return {
     -- }
 
     --INFO: cyberdream
-    local colors = {
-      bg = "#16181a",
-      bg1 = "#1e2124",
-      bg2 = "#292b30",
-      bg3 = "#3c4048",
-      fg = "#ffffff",
-      grey = "#7b8496",
-      blue = "#5ea1ff",
-      darkblue = "#3e6bab",
-      green = "#5eff6c",
-      cyan = "#5ef1ff",
-      red = "#ff6e5e",
-      yellow = "#f1ff5e",
-      magenta = "#ff5ef1",
-      pink = "#ff5ea0",
-      orange = "#ffbd5e",
-      purple = "#bd5eff",
-    }
-
+    -- local colors = {
+    --   bg = "#16181a",
+    --   bg1 = "#1e2124",
+    --   bg2 = "#292b30",
+    --   bg3 = "#3c4048",
+    --   fg = "#ffffff",
+    --   grey = "#7b8496",
+    --   blue = "#5ea1ff",
+    --   darkblue = "#3e6bab",
+    --   green = "#5eff6c",
+    --   cyan = "#5ef1ff",
+    --   red = "#ff6e5e",
+    --   yellow = "#f1ff5e",
+    --   magenta = "#ff5ef1",
+    --   pink = "#ff5ea0",
+    --   orange = "#ffbd5e",
+    --   purple = "#bd5eff",
+    -- }
 
     config_custom(colors)
   end

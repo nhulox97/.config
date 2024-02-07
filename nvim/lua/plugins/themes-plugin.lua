@@ -17,17 +17,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "tiagovla/tokyodark.nvim",
-    lazy = true,
-    event = "VeryLazy",
-    opts = {
-      -- custom options here
-    },
-    config = function(_, opts)
-      require("tokyodark").setup(opts) -- calling setup is optional
-    end,
-  },
-  {
     'Mofiqul/dracula.nvim',
     lazy = true,
     event = "VeryLazy",
@@ -45,14 +34,19 @@ return {
   },
   {
     "scottmckendry/cyberdream.nvim",
-    lazy = false,
-    priority = 1000,
+    lazy = true,
+    event = "VeryLazy",
     config = function()
       require("cyberdream").setup({
-        italic_comments = false,
+        italic_comments = true,
         hide_fillchars = true,
         borderless_telescope = true,
       })
     end,
+  },
+  {
+    "oxfist/night-owl.nvim",
+    lazy = false,
+    priority = 1000,
   }
 }
