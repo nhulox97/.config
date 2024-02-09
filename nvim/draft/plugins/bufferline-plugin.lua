@@ -26,7 +26,8 @@ return {
         show_close_icon = true,
         show_tab_icons = true,
         persist_buffer_sort = true,
-        separator_style = "slope",
+        separator_style = "slant",
+        -- separator_style = "slant" | "slope" | "thick" | "thin" | { 'any', 'any' },
         hover = {
           enabled = true,
           delay = 200,
@@ -36,7 +37,7 @@ return {
           {
             filetype = "NvimTree",
             text = "Tree directory",
-            text_align = "left",
+            text_align = "NvimTree",
             separator = true,
           },
           {

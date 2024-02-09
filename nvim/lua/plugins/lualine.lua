@@ -367,6 +367,15 @@ return {
     -- --   purple = "#bd5eff",
     -- -- }
 
-    config_custom(colors)
+    require('lualine').setup({
+      options = {
+        theme = 'catppuccin',
+        globalstatus = true
+      },
+      disabled_filetypes = {
+        'NvimTree',
+        'dashboard'
+      }
+    })
   end
 }
