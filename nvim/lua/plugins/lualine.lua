@@ -144,7 +144,7 @@ local function config_custom(colors)
   ins_left {
     'filename',
     cond = conditions.buffer_not_empty,
-    color = { fg = colors.cyan, gui = 'bold', bg = colors.bg1 },
+    color = { fg = colors.cyan, bg = colors.bg1 },
   }
 
   ins_left {
@@ -152,9 +152,9 @@ local function config_custom(colors)
     sources = { 'nvim_diagnostic' },
     symbols = { error = ' ', warn = ' ', info = ' ' },
     diagnostics_color = {
-      color_error = { fg = colors.red, gui = "bold", bg = colors.bg1 },
-      color_warn = { fg = colors.yellow, gui = "bold", bg = colors.bg1 },
-      color_info = { fg = colors.blue, gui = "bold", bg = colors.bg1 },
+      color_error = { fg = colors.red, bg = colors.bg1 },
+      color_warn = { fg = colors.yellow, bg = colors.bg1 },
+      color_info = { fg = colors.blue, bg = colors.bg1 },
     },
   }
 
@@ -205,28 +205,28 @@ local function config_custom(colors)
     'branch',
     icons_enabled = true,
     icon = '',
-    color = { gui = 'bold', fg = colors.blue, bg = colors.bg1 },
+    color = { fg = colors.blue, bg = colors.bg1 },
   }
 
   ins_right {
     'filetype',
     fmt = string.lower,
     icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
-    color = { gui = 'bold', bg = colors.bg2 },
+    color = { bg = colors.bg2 },
   }
 
   ins_right {
     'o:encoding',       -- option component same as &encoding in viml
     fmt = string.lower, -- I'm not sure why it's upper case either ;)
     cond = conditions.hide_in_width,
-    color = { fg = colors.cyan, gui = 'bold', bg = colors.bg3 },
+    color = { fg = colors.cyan, bg = colors.bg3 },
   }
 
   ins_right {
     'fileformat',
     fmt = string.upper,
     icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
-    color = { fg = colors.cyan, gui = 'bold', bg = colors.bg3 },
+    color = { fg = colors.cyan, bg = colors.bg3 },
   }
 
   ins_right {
@@ -289,9 +289,9 @@ return {
     local catppuccin_theme = require("catppuccin.palettes").get_palette "mocha"
     local colors = {
       bg       = catppuccin_theme.crust,
-      bg1      = catppuccin_theme.mantle,
-      bg2      = catppuccin_theme.base,
-      bg3      = catppuccin_theme.surface0,
+      bg1      = catppuccin_theme.crust,
+      bg2      = catppuccin_theme.mantle,
+      bg3      = catppuccin_theme.base,
       fg       = catppuccin_theme.text,
       yellow   = catppuccin_theme.yellow,
       cyan     = catppuccin_theme.teal,
@@ -367,15 +367,6 @@ return {
     -- --   purple = "#bd5eff",
     -- -- }
 
-    require('lualine').setup({
-      options = {
-        theme = 'catppuccin',
-        globalstatus = true
-      },
-      disabled_filetypes = {
-        'NvimTree',
-        'dashboard'
-      }
-    })
+    config_custom(colors)
   end
 }
