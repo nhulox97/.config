@@ -251,6 +251,16 @@ return {
           require("nvim-web-devicons").setup({
             strict = true,
             override_by_extension = {
+              plantuml = {
+                icon = "󰈏",
+                color = "#ba0d4d",
+                name = "plantuml",
+              },
+              puml = {
+                icon = "󰈏",
+                color = "#ba0d4d",
+                name = "puml",
+              },
               astro = {
                 icon = "",
                 color = "#EF8547",
