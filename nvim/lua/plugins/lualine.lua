@@ -185,7 +185,7 @@ local function config_custom(colors)
     end,
     -- icon = ' LSP:',
     icon = '󰌘',
-    color = { fg = colors.peanut, gui = 'bold' },
+    color = { fg = colors.peanut },
   }
 
   -- Add components to right sections
@@ -298,10 +298,12 @@ return {
 
     local catppuccin_theme = require("catppuccin.palettes").get_palette "mocha"
     local colors = {
-      bg       = catppuccin_theme.crust,
-      bg1      = catppuccin_theme.crust,
+      bg       = catppuccin_theme.mantle,
+      bg1      = catppuccin_theme.mantle,
       bg2      = catppuccin_theme.mantle,
-      bg3      = catppuccin_theme.base,
+      bg3      = catppuccin_theme.mantle,
+      -- bg2      = catppuccin_theme.mantle,
+      -- bg3      = catppuccin_theme.base,
       fg       = catppuccin_theme.text,
       yellow   = catppuccin_theme.yellow,
       cyan     = catppuccin_theme.teal,
