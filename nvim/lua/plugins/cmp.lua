@@ -52,7 +52,6 @@ return {
       Operator = '  ',
       TypeParameter = '  ',
     }
-    local max_items = 5
 
     cmp.setup({
       formatting = {
@@ -112,11 +111,11 @@ return {
         end,
       },
       sources = {
-        { name = "nvim_lsp", max_item_count = max_items },
-        { name = "luasnip",  max_item_count = max_items },
-        { name = "neorg",    max_item_count = max_items },
-        { name = "crates",   max_item_count = max_items },
-        { name = 'orgmode',  max_item_count = max_items },
+        { name = "nvim_lsp", },
+        { name = "luasnip", },
+        { name = "neorg", },
+        { name = "crates", },
+        { name = 'orgmode', },
         -- { name = "codeium" }
       },
     })
