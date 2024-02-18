@@ -185,7 +185,7 @@ local function config_custom(colors)
       return msg
     end,
     -- icon = ' LSP:',
-    icon = ' lsp:',
+    icon = ' ',
     color = { fg = colors.peanut },
   }
 
