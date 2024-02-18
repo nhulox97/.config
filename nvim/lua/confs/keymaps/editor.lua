@@ -25,3 +25,8 @@ vim.keymap.set("n", "<leader>ng", ":Neogit<CR>", opts)
 vim.cmd([[
   nmap <Leader>z 1z=
 ]])
+
+vim.api.nvim_set_keymap('n', '+', ':vertical resize +3<CR>', opts)
+vim.api.nvim_set_keymap('n', '_', ':vertical resize -3<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>+', ':res +3<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>_', ':res -3<CR>', opts)
