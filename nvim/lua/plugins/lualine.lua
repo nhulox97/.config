@@ -126,25 +126,26 @@ local function config_custom(colors)
   ins_left {
     -- filesize component
     'filesize',
-    color = { fg = colors.magenta, bg = colors.bg2 },
+    color = { fg = colors.fg1, bg = colors.bg2 },
     cond = conditions.buffer_not_empty,
     icon = "󰒋"
   }
 
   ins_left {
-    'location', color = { fg = colors.orange, bg = colors.bg2 },
+    'location', color = { fg = colors.fg1, bg = colors.bg2 },
     icon = ""
   }
 
   ins_left {
-    'progress', color = { fg = colors.orange, bg = colors.bg2 },
+    'progress', color = { fg = colors.fg1, bg = colors.bg2 },
     icon = "󰔟"
   }
 
   ins_left {
     'filename',
+    path = 1,
     cond = conditions.buffer_not_empty,
-    color = { fg = colors.cyan, bg = colors.bg1 },
+    color = { fg = colors.pink, bg = colors.bg1 },
   }
 
   ins_left {
@@ -184,7 +185,7 @@ local function config_custom(colors)
       return msg
     end,
     -- icon = ' LSP:',
-    icon = '󰌘',
+    icon = ' lsp:',
     color = { fg = colors.peanut },
   }
 
@@ -212,21 +213,21 @@ local function config_custom(colors)
     'filetype',
     fmt = string.lower,
     icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
-    color = { bg = colors.bg2 },
+    color = { fg = colors.fg1, bg = colors.bg2 },
   }
 
   ins_right {
     'o:encoding',       -- option component same as &encoding in viml
     fmt = string.lower, -- I'm not sure why it's upper case either ;)
     cond = conditions.hide_in_width,
-    color = { fg = colors.cyan, bg = colors.bg3 },
+    color = { fg = colors.fg1, bg = colors.bg3 },
   }
 
   ins_right {
     'fileformat',
     fmt = string.upper,
     icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
-    color = { fg = colors.cyan, bg = colors.bg3 },
+    color = { fg = colors.fg1, bg = colors.bg3 },
   }
 
   ins_right {
@@ -298,23 +299,22 @@ return {
 
     local catppuccin_theme = require("catppuccin.palettes").get_palette "mocha"
     local colors = {
-      bg       = catppuccin_theme.mantle,
-      bg1      = catppuccin_theme.mantle,
-      bg2      = catppuccin_theme.mantle,
-      bg3      = catppuccin_theme.mantle,
-      -- bg2      = catppuccin_theme.mantle,
-      -- bg3      = catppuccin_theme.base,
-      fg       = catppuccin_theme.text,
-      yellow   = catppuccin_theme.yellow,
-      cyan     = catppuccin_theme.teal,
-      darkblue = catppuccin_theme.base,
-      green    = catppuccin_theme.green,
-      orange   = catppuccin_theme.peach,
-      violet   = catppuccin_theme.lavender,
-      magenta  = catppuccin_theme.mauve,
-      blue     = catppuccin_theme.blue,
-      red      = catppuccin_theme.red,
-      peanut   = catppuccin_theme.rosewater,
+      bg      = catppuccin_theme.mantle,
+      bg1     = catppuccin_theme.mantle,
+      bg2     = catppuccin_theme.mantle,
+      bg3     = catppuccin_theme.mantle,
+      fg      = catppuccin_theme.text,
+      fg1     = catppuccin_theme.subtext0,
+      yellow  = catppuccin_theme.yellow,
+      cyan    = catppuccin_theme.teal,
+      green   = catppuccin_theme.green,
+      orange  = catppuccin_theme.peach,
+      violet  = catppuccin_theme.lavender,
+      magenta = catppuccin_theme.mauve,
+      blue    = catppuccin_theme.blue,
+      red     = catppuccin_theme.red,
+      peanut  = catppuccin_theme.rosewater,
+      pink    = catppuccin_theme.pink
     }
 
     -- INFO: nightfly
@@ -327,7 +327,6 @@ return {
     --   fg       = '#bdc1c6',
     --   yellow   = '#F5DC77',
     --   cyan     = '#7fdbca',
-    --   darkblue = '#1d3b53',
     --   green    = '#a1cd5e',
     --   orange   = '#E58027',
     --   violet   = '#c792ea',
@@ -347,7 +346,6 @@ return {
     -- --   fg       = '#ebdbb2',
     -- --   yellow   = '#fabd2f',
     -- --   cyan     = '#8ec07c',
-    -- --   darkblue = '#1A5764',
     -- --   green    = '#b8bb26',
     -- --   orange   = '#fe8019',
     -- --   violet   = '#d3869b',
@@ -368,7 +366,6 @@ return {
     -- --   fg = "#ffffff",
     -- --   grey = "#7b8496",
     -- --   blue = "#5ea1ff",
-    -- --   darkblue = "#3e6bab",
     -- --   green = "#5eff6c",
     -- --   cyan = "#5ef1ff",
     -- --   red = "#ff6e5e",
