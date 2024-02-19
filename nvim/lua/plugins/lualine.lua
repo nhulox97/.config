@@ -208,11 +208,12 @@ local function config_custom(colors)
     function()
       local branch =
           vim.fn.systemlist('git rev-parse --abbrev-ref HEAD')[1]
+      local break_point = 30
 
       local branch_len = string.len(branch)
-      if branch_len > 21 then
-        local start_branch = string.sub(branch, 1, 12)
-        local end_branch = string.sub(branch, branch_len - 8, branch_len)
+      if branch_len > break_point then
+        local start_branch = string.sub(branch, 1, 17)
+        local end_branch = string.sub(branch, branch_len - 10, branch_len)
 
         branch = start_branch .. "..." .. end_branch
       end
