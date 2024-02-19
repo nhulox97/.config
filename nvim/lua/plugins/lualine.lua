@@ -171,12 +171,14 @@ local function config_custom(colors)
     -- Lsp server name .
     function()
       local msg = 'None'
-      local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-      local clients = vim.lsp.get_active_clients()
+      -- local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+      local buf_ft = vim.bo.filetype;
+      local clients = vim.lsp.get_clients()
       if next(clients) == nil then
         return msg
       end
       for _, client in ipairs(clients) do
+        ---@diagnostic disable-next-line: undefined-field
         local filetypes = client.config.filetypes
         if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
           return client.name
@@ -185,7 +187,7 @@ local function config_custom(colors)
       return msg
     end,
     -- icon = ' LSP:',
-    icon = ' ',
+    icon = '',
     color = { fg = colors.peanut },
   }
 
@@ -203,7 +205,20 @@ local function config_custom(colors)
   }
 
   ins_right {
-    'branch',
+    function()
+      local branch =
+          vim.fn.systemlist('git rev-parse --abbrev-ref HEAD')[1]
+
+      local branch_len = string.len(branch)
+      if branch_len > 21 then
+        local start_branch = string.sub(branch, 1, 12)
+        local end_branch = string.sub(branch, branch_len - 8, branch_len)
+
+        branch = start_branch .. "..." .. end_branch
+      end
+
+      return branch
+    end,
     icons_enabled = true,
     icon = '',
     color = { fg = colors.blue, bg = colors.bg1 },
