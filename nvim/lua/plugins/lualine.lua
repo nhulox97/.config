@@ -171,9 +171,16 @@ local function config_custom(colors)
     -- Lsp server name .
     function()
       local msg = 'None'
-      -- local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-      local buf_ft = vim.bo.filetype;
-      local clients = vim.lsp.get_clients()
+      local buf_ft = ""
+      local clients
+      if vim.fn.has("wsl") == 1 then
+        buf_ft = vim.bo.filetype;
+        clients = vim.lsp.get_clients()
+      else
+        buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+        clients = vim.lsp.get_active_clients()
+      end
+
       if next(clients) == nil then
         return msg
       end
