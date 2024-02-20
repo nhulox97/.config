@@ -1,3 +1,7 @@
+local function is_git_repo()
+  local output = vim.fn.system("git rev-parse --is-inside-work-tree 2>/dev/null")
+  return string.find(output, "true")
+end
 ---@diagnostic disable: need-check-nil
 local function config_custom(colors)
   -- Eviline config for lualine
@@ -213,16 +217,19 @@ local function config_custom(colors)
 
   ins_right {
     function()
-      local branch =
-          vim.fn.systemlist('git rev-parse --abbrev-ref HEAD')[1]
-      local break_point = 30
+      local branch = "Not initialized"
+      if is_git_repo() == 1 then
+        branch =
+            vim.fn.systemlist('git rev-parse --abbrev-ref HEAD')[1]
+        local break_point = 30
 
-      local branch_len = string.len(branch)
-      if branch_len > break_point then
-        local start_branch = string.sub(branch, 1, 17)
-        local end_branch = string.sub(branch, branch_len - 10, branch_len)
+        local branch_len = string.len(branch)
+        if branch_len > break_point then
+          local start_branch = string.sub(branch, 1, 17)
+          local end_branch = string.sub(branch, branch_len - 10, branch_len)
 
-        branch = start_branch .. "..." .. end_branch
+          branch = start_branch .. "..." .. end_branch
+        end
       end
 
       return branch
