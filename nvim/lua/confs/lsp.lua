@@ -1,12 +1,16 @@
----@diagnostic disable-next-line: undefined-global
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+local lspconfig = require("lspconfig")
+local capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 require("neodev").setup({})
-
 require('luasnip.loaders.from_vscode').lazy_load()
 
-require("lspconfig")["lua_ls"].setup({
+local on_attach = function(client, bufnr)
+  if client.server_capabilities["documentSymbolProvider"] then
+    require("nvim-navic").attach(client, bufnr)
+  end
+end
+
+lspconfig["lua_ls"].setup({
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
@@ -18,84 +22,84 @@ require("lspconfig")["lua_ls"].setup({
   }
 })
 
-require("lspconfig")["tsserver"].setup({
+lspconfig["tsserver"].setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
 
-require("lspconfig")["vimls"].setup({
+lspconfig["vimls"].setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
 
-require("lspconfig")["yamlls"].setup({
+lspconfig["yamlls"].setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
 
-require("lspconfig")["rust_analyzer"].setup({
+lspconfig["rust_analyzer"].setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
 
-require("lspconfig")["prismals"].setup({
+lspconfig["prismals"].setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
 
-require("lspconfig")["jsonls"].setup({
+lspconfig["jsonls"].setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
 
-require("lspconfig")["bashls"].setup({
+lspconfig["bashls"].setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
 
-require("lspconfig")["dockerls"].setup({
+lspconfig["dockerls"].setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
 
-require("lspconfig")["golangci_lint_ls"].setup({
+lspconfig["golangci_lint_ls"].setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
 
--- require("lspconfig")["tailwindcss"].setup({
+-- lspconfig["tailwindcss"].setup({
 --   on_attach = on_attach,
 --   capabilities = capabilities,
 --   filetypes = { "css", "jsx", "tsx" }
 -- })
 
-require("lspconfig")["docker_compose_language_service"].setup({
+lspconfig["docker_compose_language_service"].setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
 
-require("lspconfig")["eslint"].setup({
+lspconfig["eslint"].setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
 
-require("lspconfig")["astro"].setup({
+lspconfig["astro"].setup({
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "astro" },
 })
 
-require("lspconfig")["cssls"].setup({
+lspconfig["cssls"].setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
 
-require("lspconfig")["svelte"].setup({
+lspconfig["svelte"].setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
 
-require("lspconfig")["emmet_language_server"].setup({
+lspconfig["emmet_language_server"].setup({
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "pug", "typescriptreact", 'astro' },

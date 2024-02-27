@@ -26,7 +26,10 @@ vim.cmd([[
   nmap <Leader>z 1z=
 ]])
 
-vim.api.nvim_set_keymap('n', '+', ':vertical resize +3<CR>', opts)
-vim.api.nvim_set_keymap('n', '_', ':vertical resize -3<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>+', ':res +3<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>_', ':res -3<CR>', opts)
+vim.keymap.set('n', '+', ':vertical resize +3<CR>', opts)
+vim.keymap.set('n', '_', ':vertical resize -3<CR>', opts)
+vim.keymap.set('n', '<leader>+', ':res +3<CR>', opts)
+vim.keymap.set('n', '<leader>_', ':res -3<CR>', opts)
+
+vim.keymap.set('n', '<leader>vv', ':Vista nvim_lsp<CR>', opts)
+vim.keymap.set('n', '<leader>vc', ':Vista!<CR>', opts)

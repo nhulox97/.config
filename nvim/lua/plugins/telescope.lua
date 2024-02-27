@@ -10,7 +10,20 @@ return {
   branch = '0.1.x',
   lazy = false,
   config = function()
+    local default_vertical_layout = {
+      height = 0.9,
+      horizontal = {
+        preview_width = 0.65,
+      },
+      prompt_position = 'top',
+      width = 0.8
+    }
     require("telescope").setup({
+      defaults = {
+        file_ignore_patterns = { "node_modules", "plugged", "dist", ".git" },
+        path_display = { "truncate" },
+        layout_config = default_vertical_layout
+      },
       pickers = {
         find_files = {
           dotfiles = true,
@@ -22,9 +35,6 @@ return {
         git_branches = {
           theme = 'dropdown'
         }
-      },
-      defaults = {
-        file_ignore_patterns = { "node_modules", "plugged", "dist", ".git" },
       },
       extensions = {
         package_info = {

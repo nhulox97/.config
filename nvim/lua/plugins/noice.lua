@@ -14,18 +14,17 @@ return {
           ["cmp.entry.get_documentation"] = true,
         },
       },
-
       views = {
         notify = {
-          replace = true,
+          enabled = true,
         },
         cmdline_popup = {
           position = {
-            row = 5,
+            row = 10,
             col = "50%",
           },
           size = {
-            width = 70,
+            width = 60,
             height = "auto",
           },
         },
