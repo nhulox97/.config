@@ -1,7 +1,3 @@
-local function is_git_repo()
-  local output = vim.fn.system("git rev-parse --is-inside-work-tree 2>/dev/null")
-  return string.find(output, "true")
-end
 ---@diagnostic disable: need-check-nil
 local function config_custom(colors)
   -- Eviline config for lualine
@@ -11,6 +7,23 @@ local function config_custom(colors)
 
   -- Color table for highlights
   -- stylua: ignore
+
+  local utils = {
+    get_indentation_info = function()
+      local buffer = vim.api.nvim_get_current_buf()
+      local expandtab = vim.api.nvim_buf_get_option(buffer, "expandtab")
+      local shiftwidth = vim.api.nvim_buf_get_option(buffer, "shiftwidth")
+
+      local indentation_info = ""
+      if expandtab then
+        indentation_info = "spaces:" .. shiftwidth
+      else
+        indentation_info = "tabs:" .. shiftwidth
+      end
+
+      return indentation_info
+    end
+  }
 
   local conditions = {
     buffer_not_empty = function()
@@ -23,6 +36,10 @@ local function config_custom(colors)
       local filepath = vim.fn.expand('%:p:h')
       local gitdir = vim.fn.finddir('.git', filepath .. ';')
       return gitdir and #gitdir > 0 and #gitdir < #filepath
+    end,
+    is_git_repo = function()
+      local output = vim.fn.system("git rev-parse --is-inside-work-tree 2>/dev/null")
+      return string.find(output, "true")
     end,
   }
 
@@ -87,19 +104,16 @@ local function config_custom(colors)
     table.insert(config.sections.lualine_x, component)
   end
 
-  ins_left {
-    function()
-      return '▊'
-    end,
-    color = { fg = '#ffaa00', bg = colors.bg3 },
-    padding = { left = 0, right = 0 }, -- We don't need space before this
-  }
+  -- ins_left {
+  --   function()
+  --     return '▊'
+  --   end,
+  --   color = { fg = '#ffaa00', bg = colors.bg3 },
+  --   padding = { left = 0, right = 0 }, -- We don't need space before this
+  -- }
 
   ins_left {
-    -- mode component
-    function()
-      return '  '
-    end,
+    'mode',
     color = function()
       -- auto change color according to neovims mode
       local mode_color = {
@@ -121,35 +135,25 @@ local function config_custom(colors)
         rm = colors.cyan,
         ['r?'] = colors.cyan,
         ['!'] = colors.red,
-        t = colors.red,
+        t = colors.cyan,
       }
-      return { fg = mode_color[vim.fn.mode()], bg = colors.bg3 }
+      return { bg = mode_color[vim.fn.mode()], fg = colors.bg3, gui = "bold,italic" }
     end,
   }
 
-  ins_left {
-    -- filesize component
-    'filesize',
-    color = { fg = colors.fg1, bg = colors.bg2 },
-    cond = conditions.buffer_not_empty,
-    icon = "󰒋"
-  }
-
-  ins_left {
-    'location', color = { fg = colors.fg1, bg = colors.bg2 },
-    icon = ""
-  }
-
-  ins_left {
-    'progress', color = { fg = colors.fg1, bg = colors.bg2 },
-    icon = "󰔟"
-  }
+  -- ins_left {
+  --   -- filesize component
+  --   'filesize',
+  --   color = { fg = colors.fg1, bg = colors.bg2 },
+  --   cond = conditions.buffer_not_empty,
+  --   icon = "󰒋"
+  -- }
 
   ins_left {
     'filename',
     path = 1,
     cond = conditions.buffer_not_empty,
-    color = { fg = colors.pink, bg = colors.bg1 },
+    color = { fg = colors.peanut, bg = colors.bg1 },
   }
 
   ins_left {
@@ -163,6 +167,42 @@ local function config_custom(colors)
     },
   }
 
+  ins_left {
+    function()
+      local branch = "Not initialized"
+      if conditions.is_git_repo() == 1 then
+        branch =
+            vim.fn.systemlist('git rev-parse --abbrev-ref HEAD')[1]
+        local break_point = 30
+
+        local branch_len = string.len(branch)
+        if branch_len > break_point then
+          local start_branch = string.sub(branch, 1, 17)
+          local end_branch = string.sub(branch, branch_len - 10, branch_len)
+
+          branch = start_branch .. "..." .. end_branch
+        end
+      end
+
+      return branch
+    end,
+    icons_enabled = true,
+    icon = '',
+    color = { fg = colors.blue, bg = colors.bg1 },
+  }
+
+  ins_left {
+    'diff',
+    -- Is it me or the symbol for modified us really weird
+    symbols = { added = ' ', modified = '󰝤 ', removed = ' ' },
+    diff_color = {
+      added = { fg = colors.green, bg = colors.bg1 },
+      modified = { fg = colors.orange, bg = colors.bg1 },
+      removed = { fg = colors.red, bg = colors.bg1 },
+    },
+    cond = conditions.hide_in_width,
+  }
+
   -- Insert mid section. You can make any number of sections in neovim :)
   -- for lualine it's any number greater then 2
   ins_left {
@@ -174,7 +214,7 @@ local function config_custom(colors)
   ins_left {
     -- Lsp server name .
     function()
-      local msg = 'None'
+      local msg = 'no lsp'
       local buf_ft = ""
       local clients
       if vim.fn.has("wsl") == 1 then
@@ -198,51 +238,29 @@ local function config_custom(colors)
       return msg
     end,
     -- icon = ' LSP:',
-    icon = '',
-    color = { fg = colors.peanut },
+    icon = ' ',
+    color = { gui = "italic", fg = colors.pink },
   }
 
   -- Add components to right sections
   ins_right {
-    'diff',
-    -- Is it me or the symbol for modified us really weird
-    symbols = { added = ' ', modified = '󰝤 ', removed = ' ' },
-    diff_color = {
-      added = { fg = colors.green, bg = colors.bg1 },
-      modified = { fg = colors.orange, bg = colors.bg1 },
-      removed = { fg = colors.red, bg = colors.bg1 },
-    },
-    cond = conditions.hide_in_width,
-  }
-
-  ins_right {
     function()
-      local branch = "Not initialized"
-      if is_git_repo() == 1 then
-        branch =
-            vim.fn.systemlist('git rev-parse --abbrev-ref HEAD')[1]
-        local break_point = 30
-
-        local branch_len = string.len(branch)
-        if branch_len > break_point then
-          local start_branch = string.sub(branch, 1, 17)
-          local end_branch = string.sub(branch, branch_len - 10, branch_len)
-
-          branch = start_branch .. "..." .. end_branch
-        end
-      end
-
-      return branch
+      return utils.get_indentation_info()
     end,
-    icons_enabled = true,
-    icon = '',
-    color = { fg = colors.blue, bg = colors.bg1 },
+    -- cond = conditions.hide_in_width() and conditions.buffer_not_empty(),
+    color = { fg = colors.fg1, bg = colors.bg2 },
+    icon = ""
   }
 
   ins_right {
-    'filetype',
-    fmt = string.lower,
-    icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
+    'location',
+    color = { fg = colors.fg1, bg = colors.bg2 },
+    cond = conditions.hide_in_width,
+    icon = "",
+  }
+
+  ins_right {
+    'progress',
     color = { fg = colors.fg1, bg = colors.bg2 },
   }
 
@@ -261,12 +279,19 @@ local function config_custom(colors)
   }
 
   ins_right {
-    function()
-      return '▊'
-    end,
-    color = { fg = '#ffaa00', bg = colors.bg3 },
-    padding = { left = 1 },
+    'filetype',
+    fmt = string.lower,
+    icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
+    color = { fg = colors.fg1, bg = colors.bg2 },
   }
+
+  -- ins_right {
+  --   function()
+  --     return '▊'
+  --   end,
+  --   color = { fg = '#ffaa00', bg = colors.bg3 },
+  --   padding = { left = 1 },
+  -- }
 
   -- Now don't forget to initialize lualine
   lualine.setup(config)
