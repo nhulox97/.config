@@ -1,8 +1,7 @@
----@diagnostic disable: undefined-global, undefined-field
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.vista_renderer_enable_icon = 1
--- vim.g.vista_icon_indent = { "╰─▸ ", "├─▸ " }
+vim.g.vista_icon_indent = { "╰─▸ ", "├─▸ " }
 
 vim.opt.termguicolors = true
 vim.opt.background = "dark" -- colorschemes that can be light or dark will be made dark
