@@ -26,51 +26,58 @@ return {
     local cmp = require("cmp")
     local lspkind = require("lspkind")
     local cmp_kinds = {
-      Text = '  ',
-      Method = '  ',
-      Function = '  ',
-      Constructor = '  ',
-      Field = '  ',
-      Variable = '  ',
-      Class = '  ',
-      Interface = '  ',
-      Module = '  ',
-      Property = '  ',
-      Unit = '  ',
-      Value = '  ',
-      Enum = '  ',
-      Keyword = '  ',
-      Snippet = '  ',
-      Color = '  ',
-      File = '  ',
-      Reference = '  ',
-      Folder = '  ',
-      EnumMember = '  ',
-      Constant = '  ',
-      Struct = '  ',
-      Event = '  ',
-      Operator = '  ',
-      TypeParameter = '  ',
+      Text = '  ',
+      Method = '  ',
+      Function = ' 󰊕 ',
+      Constructor = '  ',
+      Field = '  ',
+      Variable = '  ',
+      Class = '  ',
+      Interface = '  ',
+      Module = '  ',
+      Property = '  ',
+      Unit = '  ',
+      Value = '  ',
+      Enum = '  ',
+      Keyword = '  ',
+      Snippet = '  ',
+      Color = '  ',
+      File = '  ',
+      Reference = '  ',
+      Folder = '  ',
+      EnumMember = '  ',
+      Constant = '  ',
+      Struct = '  ',
+      Event = '  ',
+      Operator = '  ',
+      TypeParameter = '  ',
     }
 
+    local max_item_count = 5
+
     cmp.setup({
+      ---@diagnostic disable-next-line: missing-fields
       formatting = {
-        format = function(_, vim_item)
-          vim_item.kind = (cmp_kinds[vim_item.kind] or '') .. vim_item.kind
-          return vim_item
+        fields = { 'kind', 'abbr', 'menu' },
+        format = function(_, item)
+          item.menu = '     (' .. string.lower(item.kind) .. ')'
+          item.kind = cmp_kinds[item.kind] or ''
+          return item
         end,
       },
       window = {
-        completion = cmp.config.window.bordered({}),
-        documentation = cmp.config.window.bordered({}),
-        scrollbar = false,
-        -- completion = {
-        --   -- border = { '┌', '─', '┐', '│', '┘', '─', '└', '│' },
-
-        -- documentation = {
-        --   border = { '┌', '─', '┐', '│', '┘', '─', '└', '│' },
-        --   winhighlight = 'Normal:CmpPmenu,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
-        -- },
+        completion = {
+          winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+          scrollbar = false,
+          col_offset = 1,
+          side_padding = 0,
+          max_height = 12,
+        },
+        documentation = {
+          winhighlight = "Normal:CmpDoc,FloatBorder:CmpDoc,Search:None",
+          max_width = 80,
+          max_height = 12,
+        },
       },
       completion = {
         completeopt = "menu,menuone,preview,noselect",
@@ -111,11 +118,10 @@ return {
         end,
       },
       sources = {
-        { name = "nvim_lsp", },
-        { name = "luasnip", },
-        { name = "neorg", },
-        { name = "crates", },
-        { name = 'orgmode', },
+        { name = "nvim_lsp", max_item_count = max_item_count },
+        { name = "luasnip",  max_item_count = max_item_count },
+        { name = "neorg",    max_item_count = max_item_count },
+        { name = "crates",   max_item_count = max_item_count },
         -- { name = "codeium" }
       },
     })

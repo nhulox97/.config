@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-field
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.vista_renderer_enable_icon = 1
@@ -30,6 +31,7 @@ require("confs.keymaps.utils")
 require("confs.lsp")
 require("confs.globals")
 require("confs.code-folding")
+require("confs.cmp-highlight")
 
 vim.filetype.add({
   extension = {
