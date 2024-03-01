@@ -1,3 +1,4 @@
+---@diagnostic disable: missing-fields
 return {
   'nvim-treesitter/nvim-treesitter',
   lazy = true,
@@ -23,6 +24,8 @@ return {
         "typescript",
         "markdown",
         "astro",
+        "rust",
+        "go"
       },
       autotag = {
         enable = true,

@@ -1,5 +1,6 @@
 local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+local util = require("lspconfig.util")
 
 require("neodev").setup({})
 require('luasnip.loaders.from_vscode').lazy_load()
@@ -121,6 +122,23 @@ lspconfig["emmet_language_server"].setup({
     --- @type table<string, string> [Emmet Docs](https://docs.emmet.io/customization/snippets/#variables)
     variables = {},
   },
+})
+
+lspconfig["gopls"].setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = { "gopls" },
+  filetypes = { "go", "gomod", "gowork", "gotmpl" },
+  root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+  settings = {
+    gopls = {
+      completeUnimported = true,
+      usePlaceholders = true,
+      analyses = {
+        unusedparams = true,
+      }
+    }
+  }
 })
 
 vim.cmd [[autocmd! CursorHold * lua vim.diagnostic.config({ virtual_lines = { only_current_line = true } })]]

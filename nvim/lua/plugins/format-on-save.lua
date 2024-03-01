@@ -30,6 +30,7 @@ return {
         astro = formatters.lsp,
         typescriptreact = formatters.prettierd,
         yaml = formatters.lsp,
+        go = { formatters.lsp, formatters.gofumpt, formatters.goimports_reviser, formatters.golines },
       }
     })
   end
