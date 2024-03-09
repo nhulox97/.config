@@ -6,7 +6,7 @@ config.color_scheme = 'Catppuccin Mocha'
 
 config.enable_tab_bar = false
 
-config.font = wezterm.font 'CaskaydiaCove Nerd Font Propo'
+config.font = wezterm.font('CaskaydiaCove Nerd Font Propo', { weight = 'Medium' })
 config.line_height = 1.65
 config.font_size = 15
 
