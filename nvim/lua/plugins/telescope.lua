@@ -18,7 +18,9 @@ return {
       prompt_position = 'top',
       width = 0.8
     }
-    require("telescope").setup({
+    local telescope = require("telescope")
+
+    telescope.setup({
       defaults = {
         file_ignore_patterns = { "node_modules", "plugged", "dist", ".git" },
         path_display = { "truncate" },
@@ -43,6 +45,7 @@ return {
       }
     })
 
-    require("telescope").load_extension("package_info")
-  end,
+    telescope.load_extension("package_info")
+    telescope.load_extension("refactoring")
+  end
 }

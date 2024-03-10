@@ -13,6 +13,16 @@ vim.keymap.set("n", "<leader>gb", ":lua require('telescope.builtin').git_branche
 
 vim.keymap.set("n", "<leader>cs", ":lua require('telescope.builtin').colorscheme()<CR>", opts)
 
+vim.keymap.set("x", "<leader>re", ":Refactor extract ")
+vim.keymap.set("x", "<leader>rf", ":Refactor extract_to_file ")
+vim.keymap.set("x", "<leader>rv", ":Refactor extract_var ")
+vim.keymap.set({ "n", "x" }, "<leader>riv", ":Refactor inline_var")
+vim.keymap.set("n", "<leader>rif", ":Refactor inline_func")
+vim.keymap.set("n", "<leader>rb", ":Refactor extract_block")
+vim.keymap.set("n", "<leader>rbf", ":Refactor extract_block_to_file")
+
+vim.keymap.set("n", "<leader>a", ":Telescope ascii<CR>", opts)
+
 vim.keymap.set("n", "<leader>w", ":w<CR>", opts)
 vim.keymap.set("n", "<leader>wa", ":wall<CR>", opts)
 vim.keymap.set("n", "<leader>wq", ":wq<CR>", opts)
