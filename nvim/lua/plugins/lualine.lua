@@ -22,6 +22,17 @@ local function config_custom(colors)
       end
 
       return indentation_info
+    end,
+    get_aws_info = function()
+      local aws_info = ''
+      local aws_profile = os.getenv("AWS_PROFILE")
+      local aws_region = os.getenv("AWS_REGION") or os.getenv("CDK_DEPLOY_REGION")
+
+      if aws_profile ~= nil and aws_region ~= nil then
+        aws_info = '  ' .. aws_profile .. ' (' .. aws_region .. ')'
+      end
+
+      return aws_info
     end
   }
 
@@ -151,7 +162,7 @@ local function config_custom(colors)
 
   ins_left {
     'filename',
-    path = 1,
+    path = 0,
     cond = conditions.buffer_not_empty,
     color = { fg = colors.peanut, bg = colors.bg1 },
   }
@@ -210,6 +221,13 @@ local function config_custom(colors)
   --     return '%='
   --   end,
   -- }
+
+  ins_right {
+    function()
+      return utils.get_aws_info()
+    end,
+    color = { fg = colors.orange },
+  }
 
   -- ins_left {
   ins_right {
