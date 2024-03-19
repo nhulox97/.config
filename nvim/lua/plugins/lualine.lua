@@ -126,8 +126,7 @@ local function config_custom(colors)
   ins_left {
     'mode',
     color = function()
-      -- auto change color according to neovims mode
-      local mode_color = {
+      local mode_colors = {
         n = colors.red,
         i = colors.green,
         v = colors.blue,
@@ -148,7 +147,9 @@ local function config_custom(colors)
         ['!'] = colors.red,
         t = colors.cyan,
       }
-      return { bg = mode_color[vim.fn.mode()], fg = colors.bg3, gui = "bold,italic" }
+      local mode_color = (mode_colors[vim.fn.mode()] or colors.blue)
+
+      return { bg = mode_color, fg = colors.bg3, gui = "bold,italic" }
     end,
   }
 
@@ -177,43 +178,6 @@ local function config_custom(colors)
       color_info = { fg = colors.blue, bg = colors.bg1 },
     },
   }
-
-  ins_left {
-    function()
-      local branch = "Not initialized"
-      if conditions.is_git_repo() == 1 then
-        branch =
-            vim.fn.systemlist('git rev-parse --abbrev-ref HEAD')[1]
-        local break_point = 30
-
-        local branch_len = string.len(branch)
-        if branch_len > break_point then
-          local start_branch = string.sub(branch, 1, 17)
-          local end_branch = string.sub(branch, branch_len - 10, branch_len)
-
-          branch = start_branch .. "..." .. end_branch
-        end
-      end
-
-      return branch
-    end,
-    icons_enabled = true,
-    icon = '',
-    color = { fg = colors.blue, bg = colors.bg1 },
-  }
-
-  ins_left {
-    'diff',
-    -- Is it me or the symbol for modified us really weird
-    symbols = { added = ' ', modified = '󰝤 ', removed = ' ' },
-    diff_color = {
-      added = { fg = colors.green, bg = colors.bg1 },
-      modified = { fg = colors.orange, bg = colors.bg1 },
-      removed = { fg = colors.red, bg = colors.bg1 },
-    },
-    cond = conditions.hide_in_width,
-  }
-
   -- Insert mid section. You can make any number of sections in neovim :)
   -- for lualine it's any number greater then 2
   -- ins_left {
@@ -304,6 +268,41 @@ local function config_custom(colors)
     color = { fg = colors.fg1, bg = colors.bg2 },
   }
 
+  ins_right {
+    'diff',
+    -- Is it me or the symbol for modified us really weird
+    symbols = { added = ' ', modified = '󰝤 ', removed = ' ' },
+    diff_color = {
+      added = { fg = colors.green, bg = colors.bg1 },
+      modified = { fg = colors.orange, bg = colors.bg1 },
+      removed = { fg = colors.red, bg = colors.bg1 },
+    },
+    cond = conditions.hide_in_width,
+  }
+
+  ins_right {
+    function()
+      local branch = "Not initialized"
+      if conditions.is_git_repo() == 1 then
+        branch =
+            vim.fn.systemlist('git rev-parse --abbrev-ref HEAD')[1]
+        local break_point = 30
+
+        local branch_len = string.len(branch)
+        if branch_len > break_point then
+          local start_branch = string.sub(branch, 1, 17)
+          local end_branch = string.sub(branch, branch_len - 10, branch_len)
+
+          branch = start_branch .. "..." .. end_branch
+        end
+      end
+
+      return branch
+    end,
+    icons_enabled = true,
+    icon = '',
+    color = { fg = colors.bg1, bg = colors.darkblue, gui = "bold" },
+  }
   -- ins_right {
   --   function()
   --     return '▊'
@@ -371,24 +370,28 @@ return {
 
     -- INFO: catppuccin
 
-    local catppuccin_theme = require("catppuccin.palettes").get_palette "mocha"
+    local catppuccin_palettes = require("catppuccin.palettes")
+    local mocha_colors = catppuccin_palettes.get_palette("mocha")
+    local latte_colors = catppuccin_palettes.get_palette("latte")
+
     local colors = {
-      bg      = catppuccin_theme.mantle,
-      bg1     = catppuccin_theme.mantle,
-      bg2     = catppuccin_theme.mantle,
-      bg3     = catppuccin_theme.mantle,
-      fg      = catppuccin_theme.text,
-      fg1     = catppuccin_theme.subtext0,
-      yellow  = catppuccin_theme.yellow,
-      cyan    = catppuccin_theme.teal,
-      green   = catppuccin_theme.green,
-      orange  = catppuccin_theme.peach,
-      violet  = catppuccin_theme.lavender,
-      magenta = catppuccin_theme.mauve,
-      blue    = catppuccin_theme.blue,
-      red     = catppuccin_theme.red,
-      peanut  = catppuccin_theme.rosewater,
-      pink    = catppuccin_theme.pink
+      bg       = mocha_colors.mantle,
+      bg1      = mocha_colors.mantle,
+      bg2      = mocha_colors.mantle,
+      bg3      = mocha_colors.mantle,
+      fg       = mocha_colors.text,
+      fg1      = mocha_colors.subtext0,
+      yellow   = mocha_colors.yellow,
+      cyan     = mocha_colors.teal,
+      green    = mocha_colors.green,
+      orange   = mocha_colors.peach,
+      violet   = mocha_colors.lavender,
+      magenta  = mocha_colors.mauve,
+      blue     = mocha_colors.blue,
+      darkblue = latte_colors.lavender,
+      red      = mocha_colors.red,
+      peanut   = mocha_colors.rosewater,
+      pink     = mocha_colors.pink
     }
 
     -- INFO: nightfly
