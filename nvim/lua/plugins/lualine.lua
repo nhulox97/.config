@@ -124,7 +124,35 @@ local function config_custom(colors)
   -- }
 
   ins_left {
-    'mode',
+    function()
+      local current_mode = vim.fn.mode()
+
+      local mode_names = {
+        ['n'] = 'Normal',
+        ['no'] = 'Operator Pending',
+        ['v'] = 'Visual',
+        ['V'] = 'V-Line',
+        [''] = 'V-Block',
+        ['s'] = 'Select',
+        ['S'] = 'S-Line',
+        [''] = 'S-Block',
+        ['i'] = 'Insert',
+        ['R'] = 'Replace',
+        ['Rv'] = 'V-Replace',
+        ['c'] = 'Command',
+        ['cv'] = 'Vim-Ex',
+        ['ce'] = 'Ex',
+        ['r'] = 'Prompt',
+        ['rm'] = 'More',
+        ['r?'] = 'Confirm',
+        ['!'] = 'Shell',
+        ['t'] = 'Terminal'
+      }
+
+      local mode = string.lower(mode_names[current_mode])
+
+      return mode
+    end,
     color = function()
       local mode_colors = {
         n = colors.red,
@@ -149,7 +177,7 @@ local function config_custom(colors)
       }
       local mode_color = (mode_colors[vim.fn.mode()] or colors.blue)
 
-      return { bg = mode_color, fg = colors.bg3, gui = "bold,italic" }
+      return { bg = mode_color, fg = colors.bg3, gui = "bold" }
     end,
   }
 
