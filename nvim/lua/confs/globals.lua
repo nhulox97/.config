@@ -33,6 +33,8 @@ vim.g.vista_icon_indent = { "╰─▸ ", "├─▸ " }
 vim.opt.termguicolors = true
 vim.opt.background = "dark" -- colorschemes that can be light or dark will be made dark
 vim.opt.signcolumn = "yes"  -- show sign column so that text doesn't shift
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 -- make editor transparent
 -- vim.cmd([[
