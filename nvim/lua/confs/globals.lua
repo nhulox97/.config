@@ -20,7 +20,6 @@ vim.cmd([[
   filetype plugin indent on
   syntax on
 ]])
-vim.cmd('colorscheme catppuccin')
 vim.opt.cc = '100'                -- vim.opt.an 100 column border for good coding style
 vim.opt.mouse = ''                -- enable mouse click
 vim.opt.clipboard = 'unnamedplus' -- using system clipboard
