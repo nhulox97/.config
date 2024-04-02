@@ -141,4 +141,9 @@ lspconfig["gopls"].setup({
   }
 })
 
+lspconfig['pylsp'].setup({
+  on_attach = on_attach,
+  capabilities = capabilities
+})
+
 vim.cmd [[autocmd! CursorHold * lua vim.diagnostic.config({ virtual_lines = { only_current_line = true } })]]

@@ -21,17 +21,19 @@ vim.cmd([[
   syntax on
 ]])
 vim.cmd('colorscheme catppuccin')
--- vim.cmd('colorscheme cyberdream')
--- vim.cmd('colorscheme night-owl')
--- colorscheme tokyodark
 vim.opt.cc = '100'                -- vim.opt.an 100 column border for good coding style
 vim.opt.mouse = ''                -- enable mouse click
 vim.opt.clipboard = 'unnamedplus' -- using system clipboard
 vim.opt.cursorline = true         -- highlight current cursorline
-
 vim.g.gitblame_date_format = '%r'
-
 vim.g.nvim_tree_respect_buf_cwd = 1
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.g.vista_renderer_enable_icon = 1
+vim.g.vista_icon_indent = { "╰─▸ ", "├─▸ " }
+vim.opt.termguicolors = true
+vim.opt.background = "dark" -- colorschemes that can be light or dark will be made dark
+vim.opt.signcolumn = "yes"  -- show sign column so that text doesn't shift
 
 -- make editor transparent
 -- vim.cmd([[
