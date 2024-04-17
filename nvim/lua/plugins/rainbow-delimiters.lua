@@ -21,5 +21,7 @@ return {
         'RainbowDelimiterCyan',
       }
     })
-  end
+  end,
+  lazy = true,
+  event = "BufEnter"
 }

@@ -1,4 +1,6 @@
 return {
   'liangxianzhe/nap.nvim',
-  config = true
+  config = true,
+  lazy = true,
+  event = "BufEnter"
 }
