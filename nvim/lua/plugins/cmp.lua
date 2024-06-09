@@ -53,7 +53,7 @@ return {
       TypeParameter = '  ',
     }
 
-    local max_item_count = 5
+    local max_item_count = 7
 
     cmp.setup({
       ---@diagnostic disable-next-line: missing-fields
