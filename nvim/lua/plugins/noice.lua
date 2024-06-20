@@ -28,10 +28,10 @@ return {
             row = 6,
             col = "50%",
           },
-          border = {
-            style = "none",
-            padding = { 1, 2 },
-          },
+          -- border = {
+          --   -- style = "none",
+          --   padding = { 1, 1 },
+          -- },
           size = {
             min_width = 60,
             width = "auto",
