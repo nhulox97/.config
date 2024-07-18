@@ -25,7 +25,8 @@ return {
         "markdown",
         "astro",
         "rust",
-        "go"
+        "go",
+        "kotlin"
       },
       autotag = {
         enable = true,
