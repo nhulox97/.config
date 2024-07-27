@@ -146,4 +146,10 @@ lspconfig['pylsp'].setup({
   capabilities = capabilities
 })
 
+lspconfig['kotlin_language_server'].setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "kt", "kotlin" }
+})
+
 vim.cmd [[autocmd! CursorHold * lua vim.diagnostic.config({ virtual_lines = { only_current_line = true } })]]
