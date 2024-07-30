@@ -223,6 +223,18 @@ local function config_custom(colors)
 
   -- ins_left {
   ins_right {
+    'diff',
+    -- Is it me or the symbol for modified us really weird
+    symbols = { added = ' ', modified = '󰝤 ', removed = ' ' },
+    diff_color = {
+      added = { fg = colors.green, bg = colors.bg },
+      modified = { fg = colors.orange, bg = colors.bg },
+      removed = { fg = colors.red, bg = colors.bg },
+    },
+    cond = conditions.hide_in_width,
+  }
+
+  ins_right {
     -- Lsp server name .
     function()
       local msg = 'no lsp'
@@ -250,7 +262,7 @@ local function config_custom(colors)
     end,
     -- icon = ' LSP:',
     icon = ' ',
-    color = { gui = "italic", fg = colors.pink },
+    color = { gui = "italic", fg = colors.pink, bg = colors.bg1 },
   }
 
   -- Add components to right sections
@@ -259,19 +271,35 @@ local function config_custom(colors)
       return utils.get_indentation_info()
     end,
     -- cond = conditions.hide_in_width() and conditions.buffer_not_empty(),
-    color = { fg = colors.fg1, bg = colors.bg2 },
+    color = { fg = colors.fg1, bg = colors.bg1 },
     icon = ""
   }
 
   ins_right {
     'location',
-    color = { fg = colors.fg1, bg = colors.bg2 },
+    color = { fg = colors.fg1, bg = colors.bg1 },
     cond = conditions.hide_in_width,
     icon = "",
   }
 
   ins_right {
     'progress',
+    color = { fg = colors.fg1, bg = colors.bg1 },
+  }
+
+
+
+  ins_right {
+    'filetype',
+    fmt = string.lower,
+    icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
+    color = { fg = colors.fg1, bg = colors.bg1 },
+  }
+
+  ins_right {
+    'fileformat',
+    fmt = string.upper,
+    icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
     color = { fg = colors.fg1, bg = colors.bg2 },
   }
 
@@ -279,33 +307,7 @@ local function config_custom(colors)
     'o:encoding',       -- option component same as &encoding in viml
     fmt = string.lower, -- I'm not sure why it's upper case either ;)
     cond = conditions.hide_in_width,
-    color = { fg = colors.fg1, bg = colors.bg3 },
-  }
-
-  ins_right {
-    'fileformat',
-    fmt = string.upper,
-    icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
-    color = { fg = colors.fg1, bg = colors.bg3 },
-  }
-
-  ins_right {
-    'filetype',
-    fmt = string.lower,
-    icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
     color = { fg = colors.fg1, bg = colors.bg2 },
-  }
-
-  ins_right {
-    'diff',
-    -- Is it me or the symbol for modified us really weird
-    symbols = { added = ' ', modified = '󰝤 ', removed = ' ' },
-    diff_color = {
-      added = { fg = colors.green, bg = colors.bg1 },
-      modified = { fg = colors.orange, bg = colors.bg1 },
-      removed = { fg = colors.red, bg = colors.bg1 },
-    },
-    cond = conditions.hide_in_width,
   }
 
   ins_right {
@@ -398,88 +400,51 @@ return {
 
     -- INFO: catppuccin
 
-    local catppuccin_palettes = require("catppuccin.palettes")
-    local mocha_colors = catppuccin_palettes.get_palette("mocha")
-    local latte_colors = catppuccin_palettes.get_palette("latte")
-
-    local colors = {
-      bg       = mocha_colors.mantle,
-      bg1      = mocha_colors.mantle,
-      bg2      = mocha_colors.mantle,
-      bg3      = mocha_colors.mantle,
-      fg       = mocha_colors.text,
-      fg1      = mocha_colors.subtext0,
-      yellow   = mocha_colors.yellow,
-      cyan     = mocha_colors.teal,
-      green    = mocha_colors.green,
-      orange   = mocha_colors.peach,
-      violet   = mocha_colors.lavender,
-      magenta  = mocha_colors.mauve,
-      blue     = mocha_colors.blue,
-      darkblue = latte_colors.lavender,
-      red      = mocha_colors.red,
-      peanut   = mocha_colors.rosewater,
-      pink     = mocha_colors.pink
-    }
+    -- local catppuccin_palettes = require("catppuccin.palettes")
+    -- local mocha_colors = catppuccin_palettes.get_palette("mocha")
+    -- local latte_colors = catppuccin_palettes.get_palette("latte")
+    --
+    -- local colors = {
+    --   bg       = mocha_colors.mantle,
+    --   bg1      = mocha_colors.mantle,
+    --   bg2      = mocha_colors.mantle,
+    --   bg3      = mocha_colors.mantle,
+    --   fg       = mocha_colors.text,
+    --   fg1      = mocha_colors.subtext0,
+    --   yellow   = mocha_colors.yellow,
+    --   cyan     = mocha_colors.teal,
+    --   green    = mocha_colors.green,
+    --   orange   = mocha_colors.peach,
+    --   violet   = mocha_colors.lavender,
+    --   magenta  = mocha_colors.mauve,
+    --   blue     = mocha_colors.blue,
+    --   darkblue = latte_colors.lavender,
+    --   red      = mocha_colors.red,
+    --   peanut   = mocha_colors.rosewater,
+    --   pink     = mocha_colors.pink
+    -- }
 
     -- INFO: nightfly
     --
-    -- local colors = {
-    --   bg       = '#011627',
-    --   bg1      = '#011627',
-    --   bg2      = '#021F37',
-    --   bg3      = '#032847',
-    --   fg       = '#bdc1c6',
-    --   yellow   = '#F5DC77',
-    --   cyan     = '#7fdbca',
-    --   green    = '#a1cd5e',
-    --   orange   = '#E58027',
-    --   violet   = '#c792ea',
-    --   magenta  = '#ae81ff',
-    --   blue     = '#82aaff',
-    --   red      = '#fc514e',
-    --   peanut   = "#F9D099",
-    -- }
-
-    -- -- INFO: grubvox
-    --
-    -- -- local colors = {
-    -- --   bg       = '#282828',
-    -- --   bg1      = '#282828',
-    -- --   bg2      = '#3c3836',
-    -- --   bg3      = '#504945',
-    -- --   fg       = '#ebdbb2',
-    -- --   yellow   = '#fabd2f',
-    -- --   cyan     = '#8ec07c',
-    -- --   green    = '#b8bb26',
-    -- --   orange   = '#fe8019',
-    -- --   violet   = '#d3869b',
-    -- --   magenta  = '#b16286',
-    -- --   blue     = '#53ACB0',
-    -- --   red      = '#fb4934',
-    -- --   -- red      = '#cc241d',
-    -- --   peanut   = "#F8BE4E",
-    -- -- }
-    --
-    -- --INFO: cyberdream
-    --
-    -- -- local colors = {
-    -- --   bg = "#16181a",
-    -- --   bg1 = "#1e2124",
-    -- --   bg2 = "#292b30",
-    -- --   bg3 = "#3c4048",
-    -- --   fg = "#ffffff",
-    -- --   grey = "#7b8496",
-    -- --   blue = "#5ea1ff",
-    -- --   green = "#5eff6c",
-    -- --   cyan = "#5ef1ff",
-    -- --   red = "#ff6e5e",
-    -- --   yellow = "#f1ff5e",
-    -- --   magenta = "#ff5ef1",
-    -- --   pink = "#ff5ea0",
-    -- --   orange = "#ffbd5e",
-    -- --   purple = "#bd5eff",
-    -- -- }
+    local colors = {
+      bg       = '#01101c',
+      bg1      = '#011321',
+      bg2      = '#021829',
+      bg3      = '#032847',
+      fg       = '#bdc1c6',
+      fg1      = '#a9acb0',
+      yellow   = '#e6c645',
+      cyan     = '#7fdbca',
+      green    = '#a1cd5e',
+      orange   = '#E58027',
+      violet   = '#c792ea',
+      magenta  = '#ae81ff',
+      blue     = '#82aaff',
+      darkblue = '#618de8',
+      red      = '#ed6d6b',
+      peanut   = "#dbbc74",
+      pink     = "#f0a197",
+    }
 
     config_custom(colors)
   end

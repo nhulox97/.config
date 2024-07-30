@@ -13,6 +13,7 @@ vim.opt.shiftwidth = 2    -- width for auto indents
 vim.opt.autoindent = true -- indent a new line the same amount as the line just typed
 vim.opt.number = true     -- add line numbers
 vim.opt.relativenumber = true
+vim.opt.fillchars:append({ eob = " " })
 vim.cmd([[
   set nobackup
   set nowritebackup

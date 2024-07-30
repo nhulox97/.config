@@ -12,18 +12,6 @@ return {
     priority = 1000,
   },
   {
-    "scottmckendry/cyberdream.nvim",
-    lazy = true,
-    event = "VeryLazy",
-    config = function()
-      require("cyberdream").setup({
-        italic_comments = true,
-        hide_fillchars = true,
-        borderless_telescope = true,
-      })
-    end,
-  },
-  {
     "oxfist/night-owl.nvim",
     lazy = true,
     event = "VeryLazy",
