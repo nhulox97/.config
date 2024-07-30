@@ -300,14 +300,14 @@ local function config_custom(colors)
     'fileformat',
     fmt = string.upper,
     icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
-    color = { fg = colors.fg1, bg = colors.bg2 },
+    color = { fg = colors.fg1, bg = colors.bg1 },
   }
 
   ins_right {
     'o:encoding',       -- option component same as &encoding in viml
     fmt = string.lower, -- I'm not sure why it's upper case either ;)
     cond = conditions.hide_in_width,
-    color = { fg = colors.fg1, bg = colors.bg2 },
+    color = { fg = colors.fg1, bg = colors.bg1 },
   }
 
   ins_right {
@@ -430,18 +430,18 @@ return {
       bg       = '#01101c',
       bg1      = '#011321',
       bg2      = '#021829',
-      bg3      = '#032847',
+      bg3      = '#021829',
       fg       = '#bdc1c6',
       fg1      = '#a9acb0',
       yellow   = '#e6c645',
       cyan     = '#7fdbca',
-      green    = '#a1cd5e',
+      green    = '#22DA6E',
       orange   = '#E58027',
       violet   = '#c792ea',
       magenta  = '#ae81ff',
       blue     = '#82aaff',
       darkblue = '#618de8',
-      red      = '#ed6d6b',
+      red      = '#EF5350',
       peanut   = "#dbbc74",
       pink     = "#f0a197",
     }
