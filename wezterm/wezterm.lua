@@ -9,9 +9,9 @@ config.enable_tab_bar = false
 -- config.font = wezterm.font('CaskaydiaCove Nerd Font Propo', { weight = 'Medium' })
 -- config.line_height = 1.54
 -- config.font_size = 15
-config.font = wezterm.font('RecMonoCasual Nerd Font', { weight = 'Regular' })
-config.line_height = 1.6
-config.font_size = 15
+config.font = wezterm.font('RecMonoCasual Nerd Font', { weight = 'Medium' })
+config.line_height = 1.5
+config.font_size = 16
 
 config.window_padding = {
   left = 3,
