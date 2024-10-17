@@ -1,15 +1,15 @@
-local dark_colors = require("catppuccin.palettes").get_palette "mocha"
-local light_colors = require("catppuccin.palettes").get_palette "latte"
+-- local dark_colors = require("catppuccin.palettes").get_palette "mocha"
+-- local light_colors = require("catppuccin.palettes").get_palette "latte"
 
 local colors = {
   bg   = '#011627', -- Dark background
-  bg1  = '#001122', -- Slightly lighter background
+  bg1  = '#041c33', -- Slightly lighter background
   fg   = '#d6deeb', -- Light foreground text for contrast
   fg1  = '#c5e4fd', -- Lighter text/overlay
   fg2  = '#8892b0', -- Surface color with more contrast from bg
   fg3  = '#637777', -- Subtext, less contrast than fg but distinct
-  rbg  = '#ef5350', -- Red background
-  rfg  = '#ff5370', -- Slightly brighter red for text
+  rfg  = '#80201f', -- Red background
+  rbg  = '#ff5370', -- Slightly brighter red for text
   vbg  = '#c792ea', -- Mauve (purple background)
   lfg  = '#82aaff', -- Light lavender/blue foreground
   sfg  = '#7fdbca', -- Sapphire (cyan)
@@ -64,11 +64,11 @@ vim.api.nvim_set_hl(0, "CmpItemKindConstant", { fg = colors.yfg, bg = colors.ybg
 vim.api.nvim_set_hl(0, "CmpItemKindConstructor", { fg = colors.yfg, bg = colors.ybg })
 vim.api.nvim_set_hl(0, "CmpItemKindReference", { fg = colors.yfg, bg = colors.ybg })
 
-vim.api.nvim_set_hl(0, "CmpItemKindFunction", { fg = colors.fg2, bg = colors.vbg })
-vim.api.nvim_set_hl(0, "CmpItemKindStruct", { fg = colors.fg2, bg = colors.vbg })
-vim.api.nvim_set_hl(0, "CmpItemKindClass", { fg = colors.fg2, bg = colors.vbg })
-vim.api.nvim_set_hl(0, "CmpItemKindModule", { fg = colors.fg2, bg = colors.vbg })
-vim.api.nvim_set_hl(0, "CmpItemKindOperator", { fg = colors.fg2, bg = colors.vbg })
+vim.api.nvim_set_hl(0, "CmpItemKindFunction", { fg = colors.fg3, bg = colors.vbg })
+vim.api.nvim_set_hl(0, "CmpItemKindStruct", { fg = colors.fg3, bg = colors.vbg })
+vim.api.nvim_set_hl(0, "CmpItemKindClass", { fg = colors.fg3, bg = colors.vbg })
+vim.api.nvim_set_hl(0, "CmpItemKindModule", { fg = colors.fg3, bg = colors.vbg })
+vim.api.nvim_set_hl(0, "CmpItemKindOperator", { fg = colors.fg3, bg = colors.vbg })
 
 vim.api.nvim_set_hl(0, "CmpItemKindVariable", { fg = colors.fg3, bg = colors.fg1 })
 vim.api.nvim_set_hl(0, "CmpItemKindFile", { fg = colors.fg3, bg = colors.fg1 })
