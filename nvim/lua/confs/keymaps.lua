@@ -83,6 +83,7 @@ vim.keymap.set("n", "<leader>tc", ":NvimTreeCollapse<CR>", opts)
 vim.keymap.set("n", "<leader>tk", ":NvimTreeCollapseKeepBuffers<CR>", opts)
 vim.keymap.set("n", "<leader>tt", ":NvimTreeToggle<CR>", opts)
 vim.keymap.set("n", "<leader>tf", ":NvimTreeFindFile<CR>", opts)
+
 vim.keymap.set("n", "<leader>tr", ":NvimTreeRefresh<CR>", opts)
 
 -- Telescope keymaps
@@ -106,3 +107,7 @@ vim.keymap.set("n", "<leader>ss", ":AerialToggle <CR>", opts)
 vim.keymap.set("n", "<leader>sa", ":AerialNavToggle <CR>", opts)
 vim.keymap.set("n", "[a", ":AerialPrev <CR>", opts)
 vim.keymap.set("n", "]a", ":AerialNext <CR>", opts)
+
+-- Gitsigns keymaps
+vim.keymap.set("n", "<leader>hn", ":Gitsigns next_hunk <CR>", opts)
+vim.keymap.set("n", "<leader>hp", ":Gitsigns prev_hunk <CR>", opts)
