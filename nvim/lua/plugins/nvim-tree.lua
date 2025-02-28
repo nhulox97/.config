@@ -5,7 +5,7 @@ return {
   dependencies = {
     {
       'nvim-tree/nvim-web-devicons',
-      config = {
+      config = function()
         require("nvim-web-devicons").setup({
           strict = true,
           override_by_extension = {
@@ -26,7 +26,7 @@ return {
             },
           },
         })
-      }
+      end
     },
   },
   config = function()
