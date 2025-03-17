@@ -8,8 +8,8 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    lazy = false,
-    priority = 1000,
+    lazy = true,
+    event = "VeryLazy"
   },
   {
     "oxfist/night-owl.nvim",

@@ -400,51 +400,51 @@ return {
 
     -- INFO: catppuccin
 
-    -- local catppuccin_palettes = require("catppuccin.palettes")
-    -- local mocha_colors = catppuccin_palettes.get_palette("mocha")
-    -- local latte_colors = catppuccin_palettes.get_palette("latte")
+    local catppuccin_palettes = require("catppuccin.palettes")
+    local mocha_colors = catppuccin_palettes.get_palette("mocha")
+    local latte_colors = catppuccin_palettes.get_palette("latte")
     --
-    -- local colors = {
-    --   bg       = mocha_colors.mantle,
-    --   bg1      = mocha_colors.mantle,
-    --   bg2      = mocha_colors.mantle,
-    --   bg3      = mocha_colors.mantle,
-    --   fg       = mocha_colors.text,
-    --   fg1      = mocha_colors.subtext0,
-    --   yellow   = mocha_colors.yellow,
-    --   cyan     = mocha_colors.teal,
-    --   green    = mocha_colors.green,
-    --   orange   = mocha_colors.peach,
-    --   violet   = mocha_colors.lavender,
-    --   magenta  = mocha_colors.mauve,
-    --   blue     = mocha_colors.blue,
-    --   darkblue = latte_colors.lavender,
-    --   red      = mocha_colors.red,
-    --   peanut   = mocha_colors.rosewater,
-    --   pink     = mocha_colors.pink
-    -- }
+    local colors = {
+      bg       = mocha_colors.mantle,
+      bg1      = mocha_colors.mantle,
+      bg2      = mocha_colors.mantle,
+      bg3      = mocha_colors.mantle,
+      fg       = mocha_colors.text,
+      fg1      = mocha_colors.subtext0,
+      yellow   = mocha_colors.yellow,
+      cyan     = mocha_colors.teal,
+      green    = mocha_colors.green,
+      orange   = mocha_colors.peach,
+      violet   = mocha_colors.lavender,
+      magenta  = mocha_colors.mauve,
+      blue     = mocha_colors.blue,
+      darkblue = latte_colors.lavender,
+      red      = mocha_colors.red,
+      peanut   = mocha_colors.rosewater,
+      pink     = mocha_colors.pink
+    }
 
     -- INFO: nightfly
     --
-    local colors = {
-      bg       = '#01101c',
-      bg1      = '#011321',
-      bg2      = '#021829',
-      bg3      = '#021829',
-      fg       = '#bdc1c6',
-      fg1      = '#a9acb0',
-      yellow   = '#e6c645',
-      cyan     = '#7fdbca',
-      green    = '#22DA6E',
-      orange   = '#E58027',
-      violet   = '#c792ea',
-      magenta  = '#ae81ff',
-      blue     = '#82aaff',
-      darkblue = '#618de8',
-      red      = '#EF5350',
-      peanut   = "#dbbc74",
-      pink     = "#f0a197",
-    }
+    -- local colors = {
+    --   bg       = '#01101c',
+    --   bg1      = '#011321',
+    --   bg2      = '#021829',
+    --   bg3      = '#021829',
+    --   fg       = '#bdc1c6',
+    --   fg1      = '#a9acb0',
+    --   yellow   = '#e6c645',
+    --   cyan     = '#7fdbca',
+    --   green    = '#22DA6E',
+    --   orange   = '#E58027',
+    --   violet   = '#c792ea',
+    --   magenta  = '#ae81ff',
+    --   blue     = '#82aaff',
+    --   darkblue = '#618de8',
+    --   red      = '#EF5350',
+    --   peanut   = "#dbbc74",
+    --   pink     = "#f0a197",
+    -- }
 
     config_custom(colors)
   end

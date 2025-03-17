@@ -17,7 +17,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
-vim.cmd('colorscheme night-owl')
+vim.cmd('colorscheme catppuccin')
 require("confs.globals")
 require("confs.keymaps")
 require("confs.lsp")
