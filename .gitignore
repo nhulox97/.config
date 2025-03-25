@@ -6,3 +6,6 @@
 !/README.md
 !/screenshots/
 !/wezterm/
+!/.zshrc
+!/.p10k.zsh
+!/.bashrc
