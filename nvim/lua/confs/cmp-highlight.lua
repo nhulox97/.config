@@ -1,45 +1,42 @@
--- local dark_colors = require("catppuccin.palettes").get_palette "mocha"
--- local light_colors = require("catppuccin.palettes").get_palette "latte"
+-- local colors = {
+--   bg   = '#011627', -- Dark background
+--   bg1  = '#041c33', -- Slightly lighter background
+--   fg   = '#d6deeb', -- Light foreground text for contrast
+--   fg1  = '#c5e4fd', -- Lighter text/overlay
+--   fg2  = '#8892b0', -- Surface color with more contrast from bg
+--   fg3  = '#637777', -- Subtext, less contrast than fg but distinct
+--   rfg  = '#80201f', -- Red background
+--   rbg  = '#ff5370', -- Slightly brighter red for text
+--   vbg  = '#c792ea', -- Mauve (purple background)
+--   lfg  = '#82aaff', -- Light lavender/blue foreground
+--   sfg  = '#7fdbca', -- Sapphire (cyan)
+--   yfg  = '#ffeb95', -- Yellow foreground
+--   ybg  = '#f6d32d', -- Yellow background (more contrast)
+--   gbg  = '#22da6e', -- Green background
+--   yfg1 = '#ecc48d', -- Light rosewater
+--   bbg  = '#82aaff', -- Blue background (lavender)
+--   cbg  = '#21c7a8', -- Teal background
+-- }
 
 local colors = {
-  bg   = '#011627', -- Dark background
-  bg1  = '#041c33', -- Slightly lighter background
-  fg   = '#d6deeb', -- Light foreground text for contrast
-  fg1  = '#c5e4fd', -- Lighter text/overlay
-  fg2  = '#8892b0', -- Surface color with more contrast from bg
-  fg3  = '#637777', -- Subtext, less contrast than fg but distinct
-  rfg  = '#80201f', -- Red background
-  rbg  = '#ff5370', -- Slightly brighter red for text
-  vbg  = '#c792ea', -- Mauve (purple background)
-  lfg  = '#82aaff', -- Light lavender/blue foreground
-  sfg  = '#7fdbca', -- Sapphire (cyan)
-  yfg  = '#ffeb95', -- Yellow foreground
-  ybg  = '#f6d32d', -- Yellow background (more contrast)
-  gbg  = '#22da6e', -- Green background
-  yfg1 = '#ecc48d', -- Light rosewater
-  bbg  = '#82aaff', -- Blue background (lavender)
-  cbg  = '#21c7a8', -- Teal background
+  bg   = '#191927', -- Base (dark background)
+  bg1  = '#181825', -- Mantle (slightly lighter background)
+  fg   = '#cdd6f4', -- Text (light foreground text for contrast)
+  fg1  = '#b4befe', -- Lavender (lighter text/overlay)
+  fg2  = '#6c7086', -- Overlay0 (surface color with more contrast from bg)
+  fg3  = '#585b70', -- Surface2 (subtext, less contrast than fg but distinct)
+  rfg  = '#e03464', -- Red
+  rbg  = '#eba0ac', -- Maroon (slightly brighter red for text)
+  vbg  = '#cba6f7', -- Mauve (purple background)
+  lfg  = '#89b4fa', -- Blue
+  sfg  = '#94e2d5', -- Teal
+  yfg  = '#f9e2af', -- Yellow
+  ybg  = '#fab387', -- Peach (more contrast)
+  gbg  = '#a6e3a1', -- Green
+  yfg1 = '#f5e0dc', -- Rosewater
+  bbg  = '#389dc9', -- Sapphire
+  cbg  = '#89dceb', -- Sky
 }
-
--- local colors = {
---   bg = dark_colors.crust,
---   bg1 = dark_colors.mantle,
---   fg = dark_colors.text,
---   fg1 = light_colors.overlay1,
---   fg2 = dark_colors.surface0,
---   fg3 = dark_colors.subtext1,
---   rbg = dark_colors.red,
---   rfg = dark_colors.rosewater,
---   vbg = dark_colors.mauve,
---   lfg = light_colors.lavender,
---   sfg = dark_colors.sapphire,
---   yfg = dark_colors.yellow,
---   ybg = light_colors.yellow,
---   gbg = dark_colors.green,
---   yfg1 = light_colors.rosewater,
---   bbg = light_colors.lavender,
---   cbg = light_colors.teal
--- }
 
 
 vim.api.nvim_set_hl(0, "CmpDoc", { bg = colors.bg, fg = colors.fg })
