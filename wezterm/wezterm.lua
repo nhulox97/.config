@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
-config.color_scheme = 'Night Owl (Gogh)'
+config.color_scheme = 'Catppuccin Mocha'
 
 config.enable_tab_bar = false
 
@@ -12,7 +12,7 @@ config.enable_tab_bar = false
 config.font = wezterm.font('RecMonoSmCasual Nerd Font', { weight = 'Medium' })
 config.line_height = 1.5
 config.font_size = 16
-
+-- config.default_cursor_style = 'BlinkingUnderline'
 config.window_padding = {
   left = 3,
   right = 0,
