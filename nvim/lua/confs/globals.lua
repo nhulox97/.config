@@ -20,6 +20,9 @@ vim.cmd([[
   set nocompatible
   filetype plugin indent on
   syntax on
+set nowrap
+set sidescroll=1
+set sidescrolloff=10
 ]])
 vim.opt.cc = '100'                -- vim.opt.an 100 column border for good coding style
 vim.opt.mouse = ''                -- enable mouse click
@@ -36,6 +39,7 @@ vim.opt.background = "dark" -- colorschemes that can be light or dark will be ma
 vim.opt.signcolumn = "yes"  -- show sign column so that text doesn't shift
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
 
 -- make editor transparent
 -- vim.cmd([[

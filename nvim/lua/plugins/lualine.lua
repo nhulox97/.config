@@ -16,9 +16,9 @@ local function config_custom(colors)
 
       local indentation_info = ""
       if expandtab then
-        indentation_info = "spaces:" .. shiftwidth
+        indentation_info = "sps:" .. shiftwidth
       else
-        indentation_info = "tabs:" .. shiftwidth
+        indentation_info = "tbs:" .. shiftwidth
       end
 
       return indentation_info
@@ -320,10 +320,10 @@ local function config_custom(colors)
 
         local branch_len = string.len(branch)
         if branch_len > break_point then
-          local start_branch = string.sub(branch, 1, 17)
-          local end_branch = string.sub(branch, branch_len - 10, branch_len)
+          local start_branch = string.sub(branch, 1, 15)
+          -- local end_branch = string.sub(branch, branch_len - 10, branch_len)
 
-          branch = start_branch .. "..." .. end_branch
+          branch = start_branch .. "..."
         end
       end
 

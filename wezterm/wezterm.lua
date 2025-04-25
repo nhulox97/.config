@@ -11,8 +11,7 @@ config.enable_tab_bar = false
 -- config.font_size = 15
 config.font = wezterm.font('RecMonoSmCasual Nerd Font', { weight = 'Medium' })
 config.line_height = 1.5
-config.font_size = 16
--- config.default_cursor_style = 'BlinkingUnderline'
+config.font_size = 18
 config.window_padding = {
   left = 3,
   right = 0,
