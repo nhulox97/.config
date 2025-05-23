@@ -35,4 +35,4 @@ vim.filetype.add({
 })
 vim.treesitter.language.register("markdown", "mdx")
 
-vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#e34b19", bold = true, })
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#41e319", bold = true, })
