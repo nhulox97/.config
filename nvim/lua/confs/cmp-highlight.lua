@@ -18,24 +18,44 @@
 --   cbg  = '#21c7a8', -- Teal background
 -- }
 
+-- local colors = {
+--   bg   = '#191927', -- Base (dark background)
+--   bg1  = '#181825', -- Mantle (slightly lighter background)
+--   fg   = '#cdd6f4', -- Text (light foreground text for contrast)
+--   fg1  = '#b4befe', -- Lavender (lighter text/overlay)
+--   fg2  = '#6c7086', -- Overlay0 (surface color with more contrast from bg)
+--   fg3  = '#585b70', -- Surface2 (subtext, less contrast than fg but distinct)
+--   rfg  = '#e03464', -- Red
+--   rbg  = '#eba0ac', -- Maroon (slightly brighter red for text)
+--   vbg  = '#cba6f7', -- Mauve (purple background)
+--   lfg  = '#89b4fa', -- Blue
+--   sfg  = '#94e2d5', -- Teal
+--   yfg  = '#f9e2af', -- Yellow
+--   ybg  = '#fab387', -- Peach (more contrast)
+--   gbg  = '#a6e3a1', -- Green
+--   yfg1 = '#f5e0dc', -- Rosewater
+--   bbg  = '#389dc9', -- Sapphire
+--   cbg  = '#89dceb', -- Sky
+-- }
+
 local colors = {
-  bg   = '#191927', -- Base (dark background)
-  bg1  = '#181825', -- Mantle (slightly lighter background)
-  fg   = '#cdd6f4', -- Text (light foreground text for contrast)
-  fg1  = '#b4befe', -- Lavender (lighter text/overlay)
-  fg2  = '#6c7086', -- Overlay0 (surface color with more contrast from bg)
-  fg3  = '#585b70', -- Surface2 (subtext, less contrast than fg but distinct)
-  rfg  = '#e03464', -- Red
-  rbg  = '#eba0ac', -- Maroon (slightly brighter red for text)
-  vbg  = '#cba6f7', -- Mauve (purple background)
-  lfg  = '#89b4fa', -- Blue
-  sfg  = '#94e2d5', -- Teal
-  yfg  = '#f9e2af', -- Yellow
-  ybg  = '#fab387', -- Peach (more contrast)
-  gbg  = '#a6e3a1', -- Green
-  yfg1 = '#f5e0dc', -- Rosewater
-  bbg  = '#389dc9', -- Sapphire
-  cbg  = '#89dceb', -- Sky
+  bg   = '#242424', -- Base (gruvbox dark0)
+  bg1  = '#1d2021', -- Darker variant (gruvbox dark0_hard)
+  fg   = '#ebdbb2', -- Light text (gruvbox light0)
+  fg1  = '#d5c4a1', -- Secondary text (gruvbox light2)
+  fg2  = '#928374', -- Muted text (gruvbox gray)
+  fg3  = '#665c54', -- More muted (gruvbox dark4)
+  rfg  = '#cc241d', -- Red (gruvbox red)
+  rbg  = '#fb4934', -- Bright red (gruvbox bright_red)
+  vbg  = '#b16286', -- Purple (gruvbox purple)
+  lfg  = '#458588', -- Blue (gruvbox blue)
+  sfg  = '#689d6a', -- Aqua (gruvbox aqua)
+  yfg  = '#d79921', -- Yellow (gruvbox yellow)
+  ybg  = '#fe8019', -- Orange (gruvbox orange)
+  gbg  = '#98971a', -- Green (gruvbox green)
+  yfg1 = '#bdae93', -- Light brown (gruvbox light3)
+  bbg  = '#076678', -- Dark blue (gruvbox dark_blue)
+  cbg  = '#8ec07c', -- Bright aqua (gruvbox bright_aqua)
 }
 
 
