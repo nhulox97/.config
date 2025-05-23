@@ -13,16 +13,17 @@ vim.opt.shiftwidth = 2    -- width for auto indents
 vim.opt.autoindent = true -- indent a new line the same amount as the line just typed
 vim.opt.number = true     -- add line numbers
 vim.opt.relativenumber = true
+---@diagnostic disable-next-line: param-type-mismatch
 vim.opt.fillchars:append({ eob = " " })
 vim.cmd([[
   set nobackup
   set nowritebackup
   set nocompatible
   filetype plugin indent on
-  syntax on
-set nowrap
-set sidescroll=1
-set sidescrolloff=10
+  " syntax on
+  set nowrap
+  set sidescroll=1
+  set sidescrolloff=10
 ]])
 vim.opt.cc = '100'                -- vim.opt.an 100 column border for good coding style
 vim.opt.mouse = ''                -- enable mouse click
@@ -39,13 +40,6 @@ vim.opt.background = "dark" -- colorschemes that can be light or dark will be ma
 vim.opt.signcolumn = "yes"  -- show sign column so that text doesn't shift
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-
-
--- make editor transparent
--- vim.cmd([[
---    highlight Normal guibg=none
---    highlight NonText guibg=none
--- ]])
 
 if vim.fn.has("wsl") == 1 then
   if vim.fn.executable("wl-copy") == 0 then

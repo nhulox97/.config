@@ -3,6 +3,10 @@ vim.opt.termguicolors = true
 vim.opt.background = "dark" -- colorschemes that can be light or dark will be made dark
 vim.opt.signcolumn = "yes"  -- show sign column so that text doesn't shift
 
+
+
+
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -17,7 +21,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
-vim.cmd('colorscheme gruvbox-baby')
+vim.cmd('colorscheme gruvbox')
 require("confs.globals")
 require("confs.keymaps")
 require("confs.lsp")
@@ -30,3 +34,5 @@ vim.filetype.add({
   },
 })
 vim.treesitter.language.register("markdown", "mdx")
+
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#e34b19", bold = true, })
