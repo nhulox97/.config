@@ -15,5 +15,15 @@ return {
     "oxfist/night-owl.nvim",
     lazy = true,
     event = "VeryLazy",
+  },
+  {
+    'luisiacc/gruvbox-baby',
+    lazy = true,
+    event = "VeryLazy"
+  },
+  {
+    "sainnhe/gruvbox-material",
+    lazy = true,
+    event = "VeryLazy"
   }
 }
