@@ -245,19 +245,13 @@ local function config_custom(colors)
         clients = vim.lsp.get_clients()
       else
         buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-        clients = vim.lsp.get_active_clients()
+        clients = vim.lsp.get_clients()
       end
 
       if next(clients) == nil then
         return msg
       end
-      for _, client in ipairs(clients) do
-        ---@diagnostic disable-next-line: undefined-field
-        local filetypes = client.config.filetypes
-        if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-          return client.name
-        end
-      end
+      msg = table.concat(clients, ", ")
       return msg
     end,
     -- icon = ' LSP:',
