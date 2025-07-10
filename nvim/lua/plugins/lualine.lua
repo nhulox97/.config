@@ -245,7 +245,7 @@ local function config_custom(colors)
         clients = vim.lsp.get_clients()
       else
         buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-        clients = vim.lsp.get_clients()
+        clients = vim.tbl_map(function(client) return client.name end, vim.lsp.get_clients({ bufnr = 0 }))
       end
 
       if next(clients) == nil then

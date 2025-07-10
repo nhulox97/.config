@@ -23,10 +23,10 @@ lspconfig["lua_ls"].setup({
   }
 })
 
-lspconfig["ts_ls"].setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
+-- lspconfig["ts_ls"].setup({
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+-- })
 
 lspconfig["vimls"].setup({
   on_attach = on_attach,
