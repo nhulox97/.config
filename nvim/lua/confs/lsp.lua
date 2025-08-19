@@ -48,10 +48,10 @@ lspconfig["prismals"].setup({
   capabilities = capabilities,
 })
 
-lspconfig["jsonls"].setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
+-- lspconfig["jsonls"].setup({
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+-- })
 
 lspconfig["bashls"].setup({
   on_attach = on_attach,
