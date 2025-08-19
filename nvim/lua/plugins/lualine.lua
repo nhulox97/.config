@@ -394,51 +394,51 @@ return {
 
     -- INFO: catppuccin
 
-    -- local catppuccin_palettes = require("catppuccin.palettes")
-    -- local mocha_colors = catppuccin_palettes.get_palette("mocha")
-    -- local latte_colors = catppuccin_palettes.get_palette("latte")
+    local catppuccin_palettes = require("catppuccin.palettes")
+    local mocha_colors = catppuccin_palettes.get_palette("mocha")
+    local latte_colors = catppuccin_palettes.get_palette("latte")
     -- --
-    -- local colors = {
-    --   bg       = mocha_colors.mantle,
-    --   bg1      = mocha_colors.mantle,
-    --   bg2      = mocha_colors.mantle,
-    --   bg3      = mocha_colors.mantle,
-    --   fg       = mocha_colors.text,
-    --   fg1      = mocha_colors.subtext0,
-    --   yellow   = mocha_colors.yellow,
-    --   cyan     = mocha_colors.teal,
-    --   green    = mocha_colors.green,
-    --   orange   = mocha_colors.peach,
-    --   violet   = mocha_colors.lavender,
-    --   magenta  = mocha_colors.mauve,
-    --   blue     = mocha_colors.blue,
-    --   darkblue = latte_colors.lavender,
-    --   red      = mocha_colors.red,
-    --   peanut   = mocha_colors.rosewater,
-    --   pink     = mocha_colors.pink
-    -- }
+    local colors = {
+      bg       = mocha_colors.mantle,
+      bg1      = mocha_colors.mantle,
+      bg2      = mocha_colors.mantle,
+      bg3      = mocha_colors.mantle,
+      fg       = mocha_colors.text,
+      fg1      = mocha_colors.subtext0,
+      yellow   = mocha_colors.yellow,
+      cyan     = mocha_colors.teal,
+      green    = mocha_colors.green,
+      orange   = mocha_colors.peach,
+      violet   = mocha_colors.lavender,
+      magenta  = mocha_colors.mauve,
+      blue     = mocha_colors.blue,
+      darkblue = latte_colors.lavender,
+      red      = mocha_colors.red,
+      peanut   = mocha_colors.rosewater,
+      pink     = mocha_colors.pink
+    }
 
     -- INFO: gruvbox (improved contrast)
     --
-    local colors = {
-      bg       = '#1d2021', -- darker background (gruvbox dark0_hard)
-      bg1      = '#282828', -- lighter than before
-      bg2      = '#32302f', -- more distinct
-      bg3      = '#3c3836', -- maintained for depth
-      fg       = '#fbf1c7', -- brighter foreground (gruvbox light0_hard)
-      fg1      = '#ebdbb2', -- brighter secondary text
-      yellow   = '#fabd2f', -- brighter yellow
-      cyan     = '#8ec07c', -- brighter aqua
-      green    = '#b8bb26', -- brighter green
-      orange   = '#fe8019', -- brighter orange
-      violet   = '#d3869b', -- brighter purple
-      magenta  = '#d3869b', -- maintained
-      blue     = '#83a598', -- brighter blue
-      darkblue = '#458588', -- maintained but brighter
-      red      = '#fb4934', -- brighter red
-      peanut   = '#fabd2f', -- brighter yellow variant
-      pink     = '#ff8599', -- brighter pink
-    }
+    -- local colors = {
+    --   bg       = '#1d2021', -- darker background (gruvbox dark0_hard)
+    --   bg1      = '#282828', -- lighter than before
+    --   bg2      = '#32302f', -- more distinct
+    --   bg3      = '#3c3836', -- maintained for depth
+    --   fg       = '#fbf1c7', -- brighter foreground (gruvbox light0_hard)
+    --   fg1      = '#ebdbb2', -- brighter secondary text
+    --   yellow   = '#fabd2f', -- brighter yellow
+    --   cyan     = '#8ec07c', -- brighter aqua
+    --   green    = '#b8bb26', -- brighter green
+    --   orange   = '#fe8019', -- brighter orange
+    --   violet   = '#d3869b', -- brighter purple
+    --   magenta  = '#d3869b', -- maintained
+    --   blue     = '#83a598', -- brighter blue
+    --   darkblue = '#458588', -- maintained but brighter
+    --   red      = '#fb4934', -- brighter red
+    --   peanut   = '#fabd2f', -- brighter yellow variant
+    --   pink     = '#ff8599', -- brighter pink
+    -- }
 
     -- INFO: nightfly
     --

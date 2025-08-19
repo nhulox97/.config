@@ -17,7 +17,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
-vim.cmd('colorscheme gruvbox')
+vim.cmd('colorscheme catppuccin')
 require("confs.globals")
 require("confs.keymaps")
 require("confs.lsp")
