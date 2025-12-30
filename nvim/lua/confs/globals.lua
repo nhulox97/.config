@@ -41,6 +41,8 @@ vim.opt.signcolumn = "yes"   -- show sign column so that text doesn't shift
 vim.g.loaded_netrw = 1
 
 vim.g.everforest_background = 'soft'
+vim.g.everforest_enable_italic = 1
+
 vim.g.loaded_netrwPlugin = 1
 
 if vim.fn.has("wsl") == 1 then
