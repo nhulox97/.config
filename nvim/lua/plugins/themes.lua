@@ -56,6 +56,21 @@ return {
     end,
     lazy = true,
     event = "VeryLazy",
+  },
+  {
+    "EdenEast/nightfox.nvim",
+    lazy = true,
+    event = "VeryLazy"
+  },
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    lazy = true,
+    event = "VeryLazy"
+  },
+  {
+    "sainnhe/everforest",
+    lazy  = true,
+    event = "VeryLazy",
   }
-
 }

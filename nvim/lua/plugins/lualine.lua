@@ -395,32 +395,32 @@ return {
 
     -- INFO: catppuccin
 
-    local catppuccin_palettes = require("catppuccin.palettes")
-    local mocha_colors = catppuccin_palettes.get_palette("mocha")
-    local latte_colors = catppuccin_palettes.get_palette("latte")
-    -- --
-    local colors = {
-      bg       = mocha_colors.mantle,
-      bg1      = mocha_colors.mantle,
-      bg2      = mocha_colors.mantle,
-      bg3      = mocha_colors.mantle,
-      fg       = mocha_colors.text,
-      fg1      = mocha_colors.subtext0,
-      yellow   = mocha_colors.yellow,
-      cyan     = mocha_colors.teal,
-      green    = mocha_colors.green,
-      orange   = mocha_colors.peach,
-      violet   = mocha_colors.lavender,
-      magenta  = mocha_colors.mauve,
-      blue     = mocha_colors.blue,
-      darkblue = latte_colors.lavender,
-      red      = mocha_colors.red,
-      peanut   = mocha_colors.rosewater,
-      pink     = mocha_colors.pink
-    }
+    -- local catppuccin_palettes = require("catppuccin.palettes")
+    -- local mocha_colors = catppuccin_palettes.get_palette("mocha")
+    -- local latte_colors = catppuccin_palettes.get_palette("latte")
+
+    -- local colors = {
+    --   bg       = mocha_colors.mantle,
+    --   bg1      = mocha_colors.mantle,
+    --   bg2      = mocha_colors.mantle,
+    --   bg3      = mocha_colors.mantle,
+    --   fg       = mocha_colors.text,
+    --   fg1      = mocha_colors.subtext0,
+    --   yellow   = mocha_colors.yellow,
+    --   cyan     = mocha_colors.teal,
+    --   green    = mocha_colors.green,
+    --   orange   = mocha_colors.peach,
+    --   violet   = mocha_colors.lavender,
+    --   magenta  = mocha_colors.mauve,
+    --   blue     = mocha_colors.blue,
+    --   darkblue = latte_colors.lavender,
+    --   red      = mocha_colors.red,
+    --   peanut   = mocha_colors.rosewater,
+    --   pink     = mocha_colors.pink
+    -- }
 
     -- INFO: gruvbox (improved contrast)
-    --
+
     -- local colors = {
     --   bg       = '#1d2021', -- darker background (gruvbox dark0_hard)
     --   bg1      = '#282828', -- lighter than before
@@ -462,6 +462,28 @@ return {
     --   peanut   = "#dbbc74",
     --   pink     = "#f0a197",
     -- }
+
+    -- INFO: everforest
+    local colors = {
+      bg       = '#F3EAD3', -- lightest background (bg0)
+      bg1      = '#EAE4CA', -- slightly darker (bg1)
+      bg2      = '#E5DFC5', -- more distinct (bg2/bg_dim)
+      bg3      = '#DDD8BE', -- maintained for depth (bg3)
+      fg       = '#5C6A72', -- main foreground
+      fg1      = '#708089', -- secondary text (statusline2)
+      yellow   = '#DFA000', -- bright yellow
+      cyan     = '#35A77C', -- aqua/cyan
+      green    = '#8DA101', -- green
+      orange   = '#F57D26', -- orange
+      violet   = '#DF69BA', -- purple
+      magenta  = '#DF69BA', -- purple (same as violet)
+      blue     = '#3A94C5', -- blue
+      darkblue = '#2A7BA0', -- darker blue variant
+      red      = '#F85552', -- red
+      peanut   = '#DFA000', -- yellow variant (same as yellow)
+      pink     = '#E66868', -- pink/lighter red (statusline3)
+    }
+
 
     config_custom(colors)
   end
