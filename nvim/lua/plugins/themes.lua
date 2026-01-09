@@ -17,31 +17,6 @@ return {
     event = "VeryLazy",
   },
   {
-    'luisiacc/gruvbox-baby',
-    lazy = true,
-    event = "VeryLazy"
-  },
-  {
-    "sainnhe/gruvbox-material",
-    lazy = true,
-    event = "VeryLazy"
-  },
-
-  {
-    -- "ellisonleao/gruvbox.nvim",
-    -- config = function()
-    --   -- Default options:
-    --   require("gruvbox").setup({
-    --     bold = true,
-    --     italic = {
-    --       strings = true,
-    --       emphasis = true,
-    --       comments = true,
-    --       operators = true,
-    --       folds = true,
-    --     },
-    --   })
-    -- end,
     "datsfilipe/gruvbox.nvim",
     config = function()
       require('gruvbox').setup({
@@ -57,5 +32,4 @@ return {
     lazy = true,
     event = "VeryLazy",
   }
-
 }
