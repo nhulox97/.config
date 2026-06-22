@@ -46,6 +46,5 @@ return {
     })
 
     telescope.load_extension("package_info")
-    telescope.load_extension("refactoring")
   end
 }
